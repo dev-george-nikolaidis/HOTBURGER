@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import { ThemeProvider } from 'styled-components';
 
 const theme = {}
-import "../assets/css/main.css"
+import "../../assets/css/main.css";
 
 const Layout = ({ children }:any) => {
     return <>

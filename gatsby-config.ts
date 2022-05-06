@@ -1,5 +1,11 @@
 import type { GatsbyConfig } from "gatsby";
 
+
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
+
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `new`,
@@ -23,7 +29,16 @@ const config: GatsbyConfig = {
       "path": "./src/images/"
     },
     // __key: "images"
-  }]
+  }, {
+    resolve: `gatsby-source-strapi`,
+    options: {
+      apiURL: process.env.STRAPI_API_URL,
+      accessToken: process.env.STRAPI_TOKEN,
+      collectionTypes: ['category'],
+      // singleTypes: []
+    },
+  }, 
+]
 };
 
 export default config;
