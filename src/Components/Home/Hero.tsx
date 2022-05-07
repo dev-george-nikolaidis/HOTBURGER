@@ -13,7 +13,7 @@ const  Hero :React.FC = () => {
         <StaticImage src="../../assets/images/Hero.png" alt="Hero image of the HOTBURGER" class='hero-image'/>
         <div className="container">
           <h1>The best handmade burgers in  town made with love for you</h1>
-          <Link to="/menu" className="btn-cta">Order now</Link>
+          <Link to="/menu" className="btn-cta">our menu</Link>
         </div>
      
 </Wrapper>
@@ -49,6 +49,7 @@ const Wrapper = styled.div`
     font-weight: bold;
     font-family: var(--ff-primary-3);
     margin-bottom: 4rem;
+    
   }
 
   .container{

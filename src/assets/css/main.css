@@ -73,7 +73,10 @@ html {
   --max-width: 1440px;
   --fixed-width: 700px;
   
-  
+  /* Margins */
+  --margin-section-top-bottom:20rem 0;
+  --margin-section-top:20rem;
+  --margin-section-bottom:20rem;
   
   /*************************    Media Query's  Breakpoints ********************/
    /* Media Query's */
@@ -142,7 +145,11 @@ p {
   margin-bottom: 1.25rem;
   color: var(--clr-grey-3);
 }
-
+/* 
+img{
+  max-width: 100%;
+  display: block;
+} */
 /*  global classes */
 
 .btn-cta {
