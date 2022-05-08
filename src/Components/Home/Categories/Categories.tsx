@@ -6,8 +6,7 @@ import CategoriesCard from './CategoriesCard';
 
 
 
- export type QueryProps = {
-
+type QueryProps = {
   allStrapiCategory: {
     totalCount: number
     nodes: Array<{
@@ -40,7 +39,8 @@ import CategoriesCard from './CategoriesCard';
 extensions?: {}
 }
 
- const query = graphql`
+
+const query = graphql`
   {
     allStrapiCategory {
       totalCount
@@ -48,7 +48,7 @@ extensions?: {}
         category_image {
           localFile {
             childImageSharp {
-              gatsbyImageData(formats: WEBP, placeholder: BLURRED, width: 100)
+              gatsbyImageData(formats: WEBP, placeholder: TRACED_SVG, width: 200)
             }
           }
         }
@@ -69,7 +69,7 @@ const  Categories :React.FC = () => {
      const {title,category_image}  = data;
         
      return(
-       <CategoriesCard title={title} imageData= {category_image} />
+       <CategoriesCard title={title} imageData= {category_image} key={index} />
      )
   }))
 
@@ -77,7 +77,7 @@ const  Categories :React.FC = () => {
 
   return (
 <Wrapper>
-      <h2>Check out our menu categories</h2>
+      <h2 className="section-title">Check out our menu categories</h2>
       <div className="container">
           {displayData}
       </div>
@@ -91,14 +91,9 @@ export default Categories;
 const Wrapper = styled.section`
   grid-column:  2 /14;
  
-  /* margin-top:var(--margin-section-top) */
+ 
       h2{
-          text-align: center;
-          margin: 10rem 0;
-          font-size: 2.8rem;
-          letter-spacing: 0.4rem;
-          font-family: var( --ff-primary-1);
-          font-weight: 600;
+      
       }
 
       .container{

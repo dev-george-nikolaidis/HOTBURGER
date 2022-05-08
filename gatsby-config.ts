@@ -22,7 +22,7 @@ const config: GatsbyConfig = {
     }
   },
    "gatsby-plugin-sharp",
-   "gatsby-transformer-sharp", {
+   "gatsby-transformer-sharp", { 
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "images",
@@ -34,7 +34,7 @@ const config: GatsbyConfig = {
     options: {
       apiURL: process.env.STRAPI_API_URL,
       accessToken: process.env.STRAPI_TOKEN,
-      collectionTypes: ['category'],
+      collectionTypes: ['category',"gallery","testimonial"],
       // singleTypes: []
     },
   }, 

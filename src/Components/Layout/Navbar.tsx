@@ -19,7 +19,7 @@ const  Navbar :React.FC = () => {
             </Link>
            </li>
             <li>
-               <Link to="/" activeClassName="active" >Home</Link>
+               <Link to="/"  >Home</Link>
             </li>
             <li>
               <Link to="/">Menu</Link>
@@ -78,7 +78,7 @@ const Wrapper = styled.nav`
   }
 
   li:not(:last-child):hover{
-    background-color: var(--clr-primary-1-hover);
+    background-color: var(--clr-primary-1);
   }
 
   li:nth-child(1):hover{
@@ -100,10 +100,11 @@ const Wrapper = styled.nav`
   }
 
   .btn-shadow-link:hover{
-    border:2px var(--clr-primary-1-hover) solid;
+    border:2px var(--clr-primary-1) solid;
     
   }
 
  .active{
  }
+ 
 `

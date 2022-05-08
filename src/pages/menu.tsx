@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const  NotFoundPage :React.FC = () => {
+const  menu :React.FC = () => {
 
   return (
 <Wrapper>
-      404
+
 </Wrapper>
 );
 };
 
-export default NotFoundPage;
+export default menu;
 
 
 const Wrapper = styled.div``

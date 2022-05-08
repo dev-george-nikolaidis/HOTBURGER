@@ -187,3 +187,32 @@ img{
     opacity: 1;
   }
 }
+
+
+/*  utility classes */
+.section-title{
+  text-align: center;
+  margin: 10rem 0;
+  font-size: 2.8rem;
+  letter-spacing: 0.4rem;
+  font-family: var( --ff-primary-1);
+  font-weight: 600;
+}
+
+.modal{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: var(--clr-modal-1);
+}
+
+.absolute{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

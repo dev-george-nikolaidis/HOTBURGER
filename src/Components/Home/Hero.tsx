@@ -31,17 +31,11 @@ const Wrapper = styled.div`
   .hero-image{
     max-width: 100%;
     min-height: 80rem;
-   display: block;
+    display: block;
   }
 
   .modal{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
-    background: var(--clr-modal-1);
+ 
   }
 
   h1{

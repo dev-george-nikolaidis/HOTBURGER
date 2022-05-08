@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { GatsbyImage} from 'gatsby-plugin-image';
-
-import { QueryProps } from './Categories';
 import { Link } from 'gatsby';
 
 interface Props {
@@ -37,12 +35,12 @@ const  CategoriesCard :React.FC<Props> = ({title,imageData}) => {
 
   return (
 <Wrapper>
-    {/* <div className="modal"></div> */}
-    <Link to={title.toLocaleLowerCase()}>
+    <Link to="/menu" className="absolute">
+     <div className="modal"></div>
       <h5>{title}</h5>
       {/* @ts-ignore */}
-      <GatsbyImage image={imageData.localFile.childImageSharp.gatsbyImageData} alt={`${title} image`}  styles={{width:"100%"}}/> 
-    
+      <GatsbyImage image={imageData.localFile.childImageSharp.gatsbyImageData} alt={`${title} image`} className="image absolute"  /> 
+      
     </Link>
 </Wrapper>
 );
@@ -57,18 +55,32 @@ const Wrapper = styled.div`
   border: 5px solid var(--clr-primary-1);
   border-radius:10px;
 
-  /* background-color: red; */
+ 
   a{
-    /* background: #eee; */
-    width: 100%;
-    height: 100%;
-    display: block;
-
+    z-index: 3;
+    transform: var(--transition);
   }
-  img{ 
-   width: 100%;
-    
+
+  a:hover{
   
+   h5{
+     padding: 1rem 2rem;
+     background-color: var(--clr-primary-1);
+      border-radius:var(--radius) ;
+   }
+
+   .modal{
+    border: 5px solid #fff;
+    border-radius:5px;
+   }
+    
+  }
+
+
+  .image{ 
+    z-index: 1;
+    border-radius: 2px;
+
   } 
 
   h5{
@@ -84,15 +96,8 @@ const Wrapper = styled.div`
     letter-spacing: 0.3rem;
   }
 
-  .modal{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
-    background: var(--clr-modal-1);
-  }
+
+
 
 
 `
