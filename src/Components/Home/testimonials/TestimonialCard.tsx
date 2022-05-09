@@ -1,4 +1,5 @@
-import React from 'react';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 
@@ -34,9 +35,17 @@ interface Props{
 
 const  TestimonialCard :React.FC<Props> = ({name,description,image}) => {
 
+
+
   return (
 <Wrapper>
-
+        <div className="card-container">
+            {/* @ts-ignore */}
+          <GatsbyImage image = {image.localFile.childImageSharp?.gatsbyImageData} alt={name}/>
+          <h4>{name}</h4>
+          <p>{description}</p>
+        </div>
+    
 </Wrapper>
 );
 };
@@ -44,4 +53,39 @@ const  TestimonialCard :React.FC<Props> = ({name,description,image}) => {
 export default TestimonialCard;
 
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+ 
+    text-align: center;
+    background-color:#010101;
+    min-height: 45rem;
+    border: 5px solid var(--clr-primary-1);
+    border-radius: 1rem;
+
+
+  .card-container{
+    padding:2.5rem;
+    min-height:100%;
+  }
+
+
+  img{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 100rem;
+  }
+
+
+  h4{
+       font-size:2.5rem;
+       font-family: var(--ff-primary-3);
+        color:rgba(255,255,255,0.5);
+        padding: 2rem 0;
+  }
+
+  p{
+      font-size: 2.3rem;
+      font-family: var(--ff-primary-2);
+      letter-spacing: 0.2rem;
+  }
+  
+`

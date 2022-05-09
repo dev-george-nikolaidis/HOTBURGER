@@ -5,10 +5,12 @@ import { reducer } from './HotburgerReducer';
 
 export interface HotburgerContextState {
     message: string;
+  
 }
 
 const initialState : HotburgerContextState = {
-    message: 'Is working'
+    message: 'Is working',
+
 }
 
 

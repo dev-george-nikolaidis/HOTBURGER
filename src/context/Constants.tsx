@@ -1,13 +1,21 @@
 export enum ActionTypes { 
- TEST = 'TEST'
+ TEST = 'TEST',
+
  }
 
 
 export enum PayloadTypes{
-    
+    TestimonialsType
 }
 
 export interface Action {
 type:ActionTypes;
-payload?: PayloadTypes;
+payload?: any;
 }
+
+
+
+   
+    
+   
+  

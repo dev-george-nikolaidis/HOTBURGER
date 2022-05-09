@@ -23,7 +23,7 @@ const  Hero :React.FC = () => {
 export default Hero;
 
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   grid-column: full-start / full-end;
   background-color:purple; 
   position: relative;
