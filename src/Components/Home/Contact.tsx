@@ -4,20 +4,29 @@ import styled from 'styled-components';
 
 const  Contact :React.FC = () => {
 
+
+
+
+  const submitForm = (e:React.MouseEvent<HTMLButtonElement>)=>{
+    e.preventDefault();
+    console.log("clicked")
+  }
+
   return (
-<Wrapper>
+<Wrapper id="contact">
+
       <h2 className="section-title">Contacts us</h2>
       <div className="container">
         <div className="modal"></div>
         <StaticImage src="../../assets/images/contact-background.png" alt="" className="background-image" />
-        <form  className="form">
+        <form  className="form" >
            <label htmlFor="Name">Name*</label>
             <input type="text" className="name" />
            <label htmlFor="Name">Email*</label>
             <input type="email" className="email" />
            <label htmlFor="message">Message*</label>
             <textarea  />
-            <button className="btn-cta" type="submit">Send message</button>
+            <button className="btn-cta" type="submit" onClick={(e)=>submitForm(e)}>Send message</button>
         </form>
       </div>
 </Wrapper>
@@ -85,6 +94,7 @@ grid-column:  full-start/full-end;
   button{
     display: block;
     width: 100%;
+    border: 1px solid var(--clr-primary-1);
   }
 
 `

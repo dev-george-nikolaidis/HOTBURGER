@@ -3,10 +3,25 @@ import React from 'react';
 import styled from 'styled-components';
 import "../../assets/css/main.css"
 import Logo from "../../assets/images/logo.svg"
-
+import { FaShoppingCart } from "react-icons/fa";
 
 
 const  Navbar :React.FC = () => {
+  const pathName = window.location.pathname ;
+
+    const links = (
+             <>
+                <li>
+                <Link to="#about">About</Link>
+              </li>
+              <li>
+                <Link to="#gallery">Gallery</Link>
+              </li>
+              <li>
+                <Link to="#contact">Contact</Link>
+              </li>
+            </>
+    )
 
   return (
 <Wrapper>
@@ -14,30 +29,19 @@ const  Navbar :React.FC = () => {
       
         <ul className="flex-container">
           <li>  
-            <Link to="/">
-                <img src={Logo} alt="logo of the HOTBURGER" className="logo" />
-            </Link>
+            <Link to="/"> <img src={Logo} alt="logo of the HOTBURGER" className="logo" /> </Link>
            </li>
             <li>
-               <Link to="/"  >Home</Link>
+               <Link to="/" className={`${pathName ==="/" ? "active":null}`} >Home</Link>
             </li>
             <li>
-              <Link to="/">Menu</Link>
+              <Link to="/menu" className={`${pathName ==="/menu" ? "active":null}`}>Menu</Link>
             </li>
-            <li>
-              <Link to="/">About</Link>
-            </li>
-            <li>
-              <Link to="/">Gallery</Link>
-            </li>
-            <li>
-              <Link to="/">Contact</Link>
-            </li>
+            { pathName === "/"? links:null}
             {/* <Link to="/">Sign in</Link> */}
             <li>
-              <Link to="/"  className='btn-shadow-link'>Order Online</Link>
+              <Link to="/checkout"  className="cart-container">  <FaShoppingCart className="cart-icon" />   </Link>
             </li>
-         
         </ul>
   
 </Wrapper>
@@ -77,9 +81,9 @@ const Wrapper = styled.nav`
     padding: 1rem;
   }
 
-  li:not(:last-child):hover{
-    background-color: var(--clr-primary-1);
-  }
+  /* li:not(:last-child):hover{
+     color: var(--clr-primary-1);
+  } */
 
   li:nth-child(1):hover{
     background-color: var(--clr-background-1);
@@ -92,19 +96,19 @@ const Wrapper = styled.nav`
   }
 
 
-  .btn-shadow-link{
-
-    border: 2px #fff solid;
-     padding: 0.8rem 1.5rem;
-  
+  .cart-icon{
+    font-size:3rem;
   }
 
-  .btn-shadow-link:hover{
-    border:2px var(--clr-primary-1) solid;
-    
+  .cart-icon:hover{
+   color: var(--clr-primary-1);
   }
 
  .active{
+  background: var(--clr-primary-1);
+  padding: 1rem;
+
  }
  
+
 `

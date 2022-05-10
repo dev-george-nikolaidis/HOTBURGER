@@ -2,10 +2,12 @@ import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
 
+
+
 const  About :React.FC = () => {
 
   return (
-<Wrapper>
+<Wrapper id="about">
       <div className="modal"></div>
       <div className="text-container ">
         <h2 className="section-title">What we do</h2>

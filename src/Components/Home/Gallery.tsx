@@ -72,7 +72,7 @@ const  Gallery :React.FC = () => {
 
   
   return (
-<Wrapper>
+<Wrapper id="gallery">
     <h2 className="section-title">Need inspiration ? Check out our Gallery</h2>
     <div className="gallery-container">
        {displayGallery}

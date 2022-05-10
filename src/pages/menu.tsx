@@ -1,16 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
+import Menu from '../components/menu/Menu';
+
 
 const  menu :React.FC = () => {
 
   return (
-<Wrapper>
-
-</Wrapper>
+<>
+    <Menu/>
+</>
 );
 };
 
 export default menu;
 
-
-const Wrapper = styled.div``
