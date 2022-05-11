@@ -40,7 +40,7 @@ const  Navbar :React.FC = () => {
             { pathName === "/"? links:null}
             {/* <Link to="/">Sign in</Link> */}
             <li>
-              <Link to="/checkout"  className="cart-container">  <FaShoppingCart className="cart-icon" />   </Link>
+              <Link to="/checkout"  className="cart-container-link">  <FaShoppingCart className="cart-icon" />   </Link>
             </li>
         </ul>
   

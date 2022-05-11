@@ -34,7 +34,7 @@ const config: GatsbyConfig = {
     options: {
       apiURL: process.env.STRAPI_API_URL,
       accessToken: process.env.STRAPI_TOKEN,
-      collectionTypes: ['category',"gallery","testimonial"],
+      collectionTypes: ['category',"gallery","testimonial","menu"],
       // singleTypes: []
     },
   }, 
