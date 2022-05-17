@@ -40,7 +40,7 @@ const  Navbar :React.FC = () => {
             { pathName === "/"? links:null}
             {/* <Link to="/">Sign in</Link> */}
             <li>
-              <Link to="/checkout"  className="cart-container-link">  <FaShoppingCart className="cart-icon" />   </Link>
+              <Link to="/cart"  className="cart-container-link">  <FaShoppingCart className="cart-icon" />  <span className="cart-text">0</span> </Link>
             </li>
         </ul>
   
@@ -95,13 +95,34 @@ const Wrapper = styled.nav`
      margin: 0 0 0 auto;
   }
 
+  li:last-of-type{
+    position: relative; 
+    transition : var(--transition);
+    /* background: red; */
+  }
+
+
+  .cart-container-link{
+  
+  }
 
   .cart-icon{
     font-size:3rem;
   }
 
-  .cart-icon:hover{
-   color: var(--clr-primary-1);
+
+
+  .cart-text{
+    position: absolute;
+    top: -20%;
+    right: -20%;
+    font-size:1.8rem;
+    font-weight:bold;
+    background-color: var(--clr-primary-1);
+    padding: 0.6rem 1rem;
+    border-radius:50%;
+    
+    
   }
 
  .active{
@@ -110,5 +131,16 @@ const Wrapper = styled.nav`
 
  }
  
+
+   li:last-of-type:hover{
+
+    .cart-icon{
+      color: var(--clr-primary-1);
+    }
+    .cart-text{
+      color: var(--clr-primary-1);
+      background-color:#fff;
+    }
+  }
 
 `

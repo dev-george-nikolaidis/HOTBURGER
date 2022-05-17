@@ -47,7 +47,7 @@ const Wrapper = styled.section`
   }
 
   .menu-container{
-    grid-column:1/9;
+    grid-column:1/8;
     background-color:#F7F3E3;
     border-radius: 5px;
     overflow-y: auto;
@@ -55,7 +55,7 @@ const Wrapper = styled.section`
   }
 
   .cart-container{
-    grid-column: 9 / 14;
+    grid-column: 8 / 14;
     background-color:#F7F3E3;
     border-radius: 5px;
     overflow-y: auto;

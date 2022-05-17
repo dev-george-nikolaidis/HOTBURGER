@@ -61,7 +61,6 @@ const  Gallery :React.FC = () => {
 
   let displayGallery = queryData.allStrapiGallery.nodes.map((image,index)=>{
   
-        
       return(
         <div key={index}  className="wrapper">
           {/* @ts-ignore */}
@@ -107,6 +106,7 @@ const Wrapper = styled.section`
   .gallery-image{
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 
 

@@ -80,7 +80,7 @@ const Wrapper = styled.div`
   .image{ 
     z-index: 1;
     border-radius: 2px;
-
+    object-fit: cover;
   } 
 
   h5{

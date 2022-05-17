@@ -3,6 +3,9 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
 import { MenuProductCategory } from '../../context/Constants';
+import { FaCartPlus } from "react-icons/fa";
+
+
 
 type QueryProps = {
   allStrapiMenu: {
@@ -70,11 +73,15 @@ const  MenuCard :React.FC = () => {
   const queryData:QueryProps = useStaticQuery(query)
   
   const categoryMenuFilter =  (data:QueryProps,filterValue:string) =>{
+
     let category = data.allStrapiMenu.nodes.map((menuProduct)=>{
+
       const  {id,title,description,price,menu_image,menu_category} = menuProduct;
+
       if (menu_category != filterValue) {
         return;
       }
+      
       return(
         <div className="product-container" key = {id}>
           <div className="image-container">
@@ -88,7 +95,7 @@ const  MenuCard :React.FC = () => {
                     <p className="price">${price}</p>
                 </div>
                 <p className="description">{description}</p>
-                <button>Add to Card</button>
+                <button><FaCartPlus className="btn-icon"/> <span className="button-text"></span> Add to Card</button>
             </div>
         
         </div>
@@ -101,6 +108,8 @@ const  MenuCard :React.FC = () => {
 
   let displayMeatBurgers = categoryMenuFilter(queryData,MenuProductCategory.MEAT_BURGER)
   let displayPlanBurgers = categoryMenuFilter(queryData,MenuProductCategory.PLANT_BURGER)
+  let displayChickenBurgers = categoryMenuFilter(queryData,MenuProductCategory.CHICKEN)
+  let displayWings = categoryMenuFilter(queryData,MenuProductCategory.WINGS)
   
   return (
 <Wrapper>
@@ -110,6 +119,12 @@ const  MenuCard :React.FC = () => {
        <h2>Plant Base Burgers</h2>
        <p className="sub-title">Vegan & veggie-friendly menu exclusively crafted with the Impossible Burger on Vegan Bun</p>
        {displayPlanBurgers}
+       <h2>Chicken</h2>
+       <p className="sub-title">All sandwiches are made with all-natural chicken breast</p>
+       {displayChickenBurgers}
+       <h2>Wings</h2>
+       <p className="sub-title">Delicious chicken wings made with extra love for our  customers</p>
+       {displayWings}
 </Wrapper>
 );
 };
@@ -163,10 +178,11 @@ const Wrapper = styled.div`
       
     }
     .product-image{
-      display: block;
+      display: block; 
       height: 100%;
       border: 2px solid var(--clr-primary-1);
       border-radius:1rem;
+    
      }
 
     .image-container{
@@ -192,10 +208,26 @@ const Wrapper = styled.div`
     .description{
       font-size: 1.5rem;
       
-    }
-
+    }  
+ 
   button{
     align-self: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    background-color: var(--clr-primary-1);
+    border: none;
+    padding: 1.3rem 1.8rem;
+    font-size:2rem;
+    border-radius:0.5rem;
+  } 
+ 
+  .btn-icon{
+    margin-right: 1rem;
+  }
+  .btn-text{
+
   }
 
 `
