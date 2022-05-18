@@ -59,11 +59,11 @@ const Wrapper = styled.div`
   a{
     z-index: 3;
     transform: var(--transition);
-  }
 
-  a:hover{
-  
-   h5{
+
+   &:hover{
+
+    h5{
      padding: 1rem 2rem;
      background-color: var(--clr-primary-1);
       border-radius:var(--radius) ;
@@ -73,7 +73,7 @@ const Wrapper = styled.div`
     border: 5px solid #fff;
     border-radius:5px;
    }
-    
+   } 
   }
 
 

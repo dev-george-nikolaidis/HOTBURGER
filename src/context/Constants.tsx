@@ -1,6 +1,7 @@
 export enum ActionTypes { 
  TEST = 'TEST',
-
+    SET_CURRENT_ITEM_CLICKED = 'SET_CURRENT_ITEM_CLICKED',
+    RESET_CURRENT_ITEM_CLICKED = "RESET_CURRENT_ITEM_CLICKED"
  }
 
  export enum MenuProductCategory {
@@ -22,12 +23,26 @@ export enum PayloadTypes{
     TestimonialsType
 }
 
+export type CartType  = {
+        products:[],
+        amount: number,
+        totalPrice: number,
+}
+
+
 export interface Action {
 type:ActionTypes;
 payload?: any;
 }
 
 
+export type CurrentItemClickedType ={
+        title:string,
+        imageUrl:string,
+        description:string,
+        menuCategory:string,
+        price:number,
+}
 
    
    

@@ -92,9 +92,9 @@ grid-column:  full-start/full-end;
   }
 
   button{
-    display: block;
+ 
     width: 100%;
-    border: 1px solid var(--clr-primary-1);
+  
   }
 
 `

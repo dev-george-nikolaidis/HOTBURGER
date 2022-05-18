@@ -150,10 +150,11 @@ const Wrapper = styled.div`
   .icons{
       font-size: 3.5rem;
 
+    &:hover{
+      color:var(--clr-primary-1);
+
+    }
   }
 
-  .icons:hover{
-      color:var(--clr-primary-1);
-  }
-  
+ 
 `

@@ -4,23 +4,15 @@ import Footer from '../layout/Footer';
 import Navbar from '../layout/Navbar';
 import CartLayout from './CartLayout';
 import MenuCard from './MenuCard';
+import Modal from './modals/Modal';
 
 const  Menu :React.FC = () => {
 
   return (
 <Wrapper>
     <Navbar/>
-    <div className="cards-container">
-
-       <div className="menu-container">
-          <MenuCard/>
-       </div>
-
-       <div className="cart-container">
-          <CartLayout/>
-       </div>
-
-    </div>
+    <MenuCard />
+    <Modal/>
     <Footer/>
 </Wrapper>
 );
@@ -36,32 +28,8 @@ const Wrapper = styled.section`
   display:  grid;
   grid-template-columns: [full-start] minmax(14rem ,auto)  [col-start] repeat(12, minmax(min-content, 12rem)) minmax(14rem ,auto) [full-end];
   grid-column-gap: 3rem;
-    
-  .cards-container{
-    grid-column: 2 / 14;
-    display: grid;
-    grid-gap: 2rem;
-    max-height: 80vh;
-    margin-bottom: 5rem;
-    
-  }
-
-  .menu-container{
-    grid-column:1/8;
-    background-color:#F7F3E3;
-    border-radius: 5px;
-    overflow-y: auto;
-   
-  }
-
-  .cart-container{
-    grid-column: 8 / 14;
-    background-color:#F7F3E3;
-    border-radius: 5px;
-    overflow-y: auto;
-  }
-
-    
+  position: relative;
+  
   
 
 `

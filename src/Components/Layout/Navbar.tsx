@@ -81,14 +81,6 @@ const Wrapper = styled.nav`
     padding: 1rem;
   }
 
-  /* li:not(:last-child):hover{
-     color: var(--clr-primary-1);
-  } */
-
-  li:nth-child(1):hover{
-    background-color: var(--clr-background-1);
-  }
-
 
   
   li:nth-child(2) {

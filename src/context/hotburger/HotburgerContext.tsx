@@ -1,16 +1,29 @@
 import React,{createContext,Dispatch,ReactNode,useContext,useReducer} from 'react';
-import { Action } from '../Constants';
+import { Action, CartType, CurrentItemClickedType } from '../Constants';
 import { reducer } from './HotburgerReducer';
 
 
 export interface HotburgerContextState {
-    message: string;
-  
+    menuCategory: string;
+    currentItemClicked:CurrentItemClickedType ;
+    cart: CartType;
 }
 
 const initialState : HotburgerContextState = {
-    message: 'Is working',
-
+    menuCategory:"",
+    currentItemClicked:{
+        title:"",
+        description:"",
+        imageUrl:"",
+        menuCategory:"",
+        price:0
+    } ,  
+    cart:{
+        products:[],
+        amount: 0,
+        totalPrice: 0,
+    }
+    
 }
 
 
