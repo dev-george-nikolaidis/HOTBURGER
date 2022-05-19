@@ -1,7 +1,9 @@
 export enum ActionTypes { 
  TEST = 'TEST',
     SET_CURRENT_ITEM_CLICKED = 'SET_CURRENT_ITEM_CLICKED',
-    RESET_CURRENT_ITEM_CLICKED = "RESET_CURRENT_ITEM_CLICKED"
+    RESET_CURRENT_ITEM_CLICKED = "RESET_CURRENT_ITEM_CLICKED",
+    ADD_ITEM_TO_CART = "ADD_ITEM_TO_CART",
+
  }
 
  export enum MenuProductCategory {
@@ -19,12 +21,32 @@ export enum ActionTypes {
 
  }
 
+
+
 export enum PayloadTypes{
     TestimonialsType
 }
 
+type MeatBurgerType = [
+        
+         {
+                title:string,
+                image:string,
+                message:string,
+                price:number,
+                temperature:string,
+                quantity:number
+
+         }
+
+   ]
+
+type VeganBurgersType = [
+        {}
+]
+
 export type CartType  = {
-        products:[],
+        products:any ,
         amount: number,
         totalPrice: number,
 }

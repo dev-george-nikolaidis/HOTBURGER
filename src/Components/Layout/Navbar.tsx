@@ -4,11 +4,12 @@ import styled from 'styled-components';
 import "../../assets/css/main.css"
 import Logo from "../../assets/images/logo.svg"
 import { FaShoppingCart } from "react-icons/fa";
+import { useHotburgerContext } from '../../context/hotburger/HotburgerContext';
 
 
 const  Navbar :React.FC = () => {
   const pathName = window.location.pathname ;
-
+  const {state:{cart}} = useHotburgerContext();
     const links = (
              <>
                 <li>
@@ -40,7 +41,7 @@ const  Navbar :React.FC = () => {
             { pathName === "/"? links:null}
             {/* <Link to="/">Sign in</Link> */}
             <li>
-              <Link to="/cart"  className="cart-container-link">  <FaShoppingCart className="cart-icon" />  <span className="cart-text">0</span> </Link>
+              <Link to="/cart"  className="cart-container-link">  <FaShoppingCart className="cart-icon" />  <span className="cart-text">{cart.amount}</span> </Link>
             </li>
         </ul>
   

@@ -55,6 +55,7 @@ export type QueryProps = {
   const  CategoryMenuFilter :React.FC<Props> = ({queryData,filterValue}) => {
     const {dispatch} = useHotburgerContext();
 
+    
     const handleClick= (e:React.MouseEvent<HTMLButtonElement> ) => {
 
           e.preventDefault();
@@ -66,6 +67,8 @@ export type QueryProps = {
         
           dispatch({type:ActionTypes.SET_CURRENT_ITEM_CLICKED,payload:{title,imageUrl,description,menuCategory,price}})
     }
+
+
 
     const categoryMenuFilter =  (data:QueryProps,filterValue:string) =>{
 
@@ -134,8 +137,7 @@ const Container = styled.div`
     .product-image{
       display: block; 
       height: 100%;
-      /* transition: var(--transition); */
-      /* border: 5px solid var(--clr-primary-1);  */
+  
       
       &:hover{
         /* transform: scale(1.01); */
@@ -175,7 +177,7 @@ const Container = styled.div`
     }  
  
   button{
-    /* align-self: flex-start; */
+
     display: flex;
     align-items: center;
     justify-content: center;

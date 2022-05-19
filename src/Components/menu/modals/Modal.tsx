@@ -4,14 +4,12 @@ import { ActionTypes, MenuProductCategory } from '../../../context/Constants';
 import { useHotburgerContext } from '../../../context/hotburger/HotburgerContext';
 import MeatBurgerModal from './MeatBurgerModal';
 
-export interface CustomModelProps{ 
-  resetClickedItem:any
-}
 
 
 const  Modal :React.FC = () => {
-    const {state:{menuCategory},dispatch} = useHotburgerContext()
-    console.log(menuCategory)
+    const {state:{menuCategory ,cart},dispatch} = useHotburgerContext()
+
+    console.log(cart)
 
 
     const resetClickedItem = () => {
@@ -31,7 +29,7 @@ const  Modal :React.FC = () => {
   return (
 <Wrapper>
 
-    {menuCategory === MenuProductCategory.MEAT_BURGER &&  <MeatBurgerModal  resetClickedItem ={resetClickedItem} />}
+    {menuCategory === MenuProductCategory.MEAT_BURGER &&  <MeatBurgerModal   resetClickedItem ={resetClickedItem} />}
    
 </Wrapper>
 );
@@ -54,6 +52,7 @@ const Wrapper = styled.div`
     }
 
     .model-container{
+    
     position: fixed;
     top: 50%;
     left: 50%;
@@ -64,11 +63,12 @@ const Wrapper = styled.div`
     background-color:#fff;
     z-index: 4;
     padding:4rem;
+    overflow-y: scroll;
     /* display: flex;
     flex-direction: column;
      justify-content:space-around; */
 
-    
+   
   }
 
 `

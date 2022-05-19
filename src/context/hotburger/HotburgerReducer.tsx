@@ -28,6 +28,14 @@ switch (action.type) {
       price:action.payload.price
     },menuCategory:action.payload.menuCategory
   });
+  case  ActionTypes.ADD_ITEM_TO_CART:
+    // console.log(action.payload.item)
+    return ({...state,cart:{
+        products:  action.payload.item,
+        amount : state.cart.amount + 1,
+        totalPrice : state.cart.totalPrice + action.payload.price * action.payload.quantity
+    }
+  });
 default:
 return state;
 }
