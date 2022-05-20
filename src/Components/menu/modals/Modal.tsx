@@ -13,7 +13,11 @@ const  Modal :React.FC = () => {
 
 
     const resetClickedItem = () => {
-      document.body.style.overflow = 'auto';
+      const isBrowser = typeof window !== "undefined"
+       if (isBrowser) {
+         
+         document.body.style.overflow = 'auto';
+       }
       dispatch({type:ActionTypes.RESET_CURRENT_ITEM_CLICKED,payload:{
         menuCategory:"",
         currentItemClicked:{

@@ -1,18 +1,18 @@
 import React from 'react';
 import { Router as MyRouter } from "@reach/router"
+import Cart from '../../components/Cart';
+import Test from '../../components/Test';
 
 
-
+// Here can use my dynamic routes
 const  App :React.FC = () => {
 
   return (
-<>  
-  <h1>welcome to dynamic page</h1>
-      <MyRouter basepath="/app">
-          {/* <FetchTest  path= "/fetch-recipes" />
-          <Login path="/login" />
-          <RandomPerson path="/random-person" />
-      */}
+<>      
+
+      <MyRouter basepath ="/app">
+          <Cart   path="/cart" />
+          {/* <Test   path="/test" /> */}
       </MyRouter>
     
 </>

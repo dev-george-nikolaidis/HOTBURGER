@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const  cart :React.FC = () => {
+const  Test :React.FC = () => {
 
   return (
 <Wrapper>
-    cart items
+    TEST
 </Wrapper>
 );
 };
 
-export default cart;
+export default Test;
 
 
 const Wrapper = styled.div``

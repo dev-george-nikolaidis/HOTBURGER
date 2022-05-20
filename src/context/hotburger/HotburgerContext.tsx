@@ -19,7 +19,9 @@ const initialState : HotburgerContextState = {
         price:0
     } ,  
     cart:{
-        products:[],
+        products:[
+         
+        ],
         amount: 0,
         totalPrice: 0,
     }

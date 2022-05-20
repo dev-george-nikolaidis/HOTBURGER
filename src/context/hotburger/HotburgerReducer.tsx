@@ -31,7 +31,7 @@ switch (action.type) {
   case  ActionTypes.ADD_ITEM_TO_CART:
     // console.log(action.payload.item)
     return ({...state,cart:{
-        products:  action.payload.item,
+        products: [ ...state.cart.products,action.payload.item]  ,
         amount : state.cart.amount + 1,
         totalPrice : state.cart.totalPrice + action.payload.price * action.payload.quantity
     }

@@ -8,8 +8,14 @@ import { useHotburgerContext } from '../../context/hotburger/HotburgerContext';
 
 
 const  Navbar :React.FC = () => {
-  const pathName = window.location.pathname ;
+
+  let pathName = ""
   const {state:{cart}} = useHotburgerContext();
+
+  const isBrowser = typeof window !== "undefined";
+  if (isBrowser) {
+    pathName = window.location.pathname ;
+  }
     const links = (
              <>
                 <li>
@@ -41,7 +47,7 @@ const  Navbar :React.FC = () => {
             { pathName === "/"? links:null}
             {/* <Link to="/">Sign in</Link> */}
             <li>
-              <Link to="/cart"  className="cart-container-link">  <FaShoppingCart className="cart-icon" />  <span className="cart-text">{cart.amount}</span> </Link>
+              <Link to="/app/cart"  className="cart-container-link">  <FaShoppingCart className="cart-icon" />  <span className="cart-text">{cart.amount}</span> </Link>
             </li>
         </ul>
   

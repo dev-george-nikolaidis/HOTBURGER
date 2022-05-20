@@ -18,8 +18,12 @@ const  MeatBurgerModal :React.FC<MeatBurgerProps> = ({resetClickedItem}) => {
   const {state:{currentItemClicked}} = useHotburgerContext()
   const {title,imageUrl,description,price} = currentItemClicked;
 
-  document.body.style.overflow = 'hidden';
-  
+ 
+  const isBrowser = typeof window !== "undefined"
+  if (isBrowser) {
+    
+    document.body.style.overflow = 'hidden';
+  }
   const [temperature,setTemperature] = useState<string | null>(null);
   const [message , setMessage] = useState("");
 
