@@ -33,7 +33,7 @@ const  MeatBurgerModal :React.FC<MeatBurgerProps> = ({resetClickedItem}) => {
        setTemperature(e.currentTarget.value)
   }
 
-  const ratios = ["Rare","Medium Rare","Medium","Medium Well","Medium","Medium Well","Well Done"];
+  const ratios = ["Rare","Medium Rare","Medium","Medium Well","Well Done"];
   let displayRatios = ratios.map((ratio,index)=>{
 
     return(
