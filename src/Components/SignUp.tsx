@@ -2,19 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 
 interface Props {
-  path: string;
+   path: string;
 }
 
-const  NotFoundPage :React.FC<Props> = () => {
+
+const  SignUp :React.FC<Props> = () => {
 
   return (
 <Wrapper>
-      404
+    Register
 </Wrapper>
 );
 };
 
-export default NotFoundPage;
+export default SignUp;
 
 
 const Wrapper = styled.div``

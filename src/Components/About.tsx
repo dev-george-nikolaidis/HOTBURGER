@@ -23,7 +23,7 @@ export default About;
 
 const Wrapper = styled.section`
   grid-column: full-start / full-end;
-  margin:20rem 0;
+  margin: 2rem 0 10rem 0;
   position: relative;
 
 

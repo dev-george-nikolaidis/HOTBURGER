@@ -9,43 +9,35 @@ import { useHotburgerContext } from '../../context/hotburger/HotburgerContext';
 
 const  Navbar :React.FC = () => {
 
-  let pathName = ""
   const {state:{cart}} = useHotburgerContext();
 
-  const isBrowser = typeof window !== "undefined";
-  if (isBrowser) {
-    pathName = window.location.pathname ;
-  }
-    const links = (
-             <>
-                <li>
-                <Link to="#about">About</Link>
-              </li>
-              <li>
-                <Link to="#gallery">Gallery</Link>
-              </li>
-              <li>
-                <Link to="#contact">Contact</Link>
-              </li>
-            </>
-    )
 
   return (
 <Wrapper>
     
-      
         <ul className="flex-container">
           <li>  
             <Link to="/"> <img src={Logo} alt="logo of the HOTBURGER" className="logo" /> </Link>
            </li>
             <li>
-               <Link to="/" className={`${pathName ==="/" ? "active":null}`} >Home</Link>
+               <Link to="/"activeStyle={active} >Home</Link>
             </li>
             <li>
-              <Link to="/menu" className={`${pathName ==="/menu" ? "active":null}`}>Menu</Link>
+              <Link to="/menu" activeStyle={active}>Menu</Link>
             </li>
-            { pathName === "/"? links:null}
-            {/* <Link to="/">Sign in</Link> */}
+            <li>
+                <Link to="/about" activeStyle={active}>About</Link>
+             </li>
+            <li>
+                 <Link to="/contact" activeStyle={active}>Contact</Link>
+             </li>
+            <li>
+                 <Link to="/app/login" activeStyle={active}>Login</Link>
+             </li>
+            <li>
+                 <Link to="/app/sign-up" activeStyle={active}>Sign up</Link>
+             </li>
+    
             <li>
               <Link to="/app/cart"  className="cart-container-link">  <FaShoppingCart className="cart-icon" />  <span className="cart-text">{cart.amount}</span> </Link>
             </li>
@@ -57,6 +49,10 @@ const  Navbar :React.FC = () => {
 
 export default Navbar; 
 
+const active = {
+  background: "#E7A74F",
+  padding: "1rem"
+}
 
 const Wrapper = styled.nav`
   grid-column:  2 / 14;

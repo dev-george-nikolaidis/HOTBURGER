@@ -2,19 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 
 interface Props {
-  path: string;
+    path: string;
 }
 
-const  NotFoundPage :React.FC<Props> = () => {
+const  Success :React.FC<Props> = () => {
 
   return (
 <Wrapper>
-      404
+    Success
 </Wrapper>
 );
 };
 
-export default NotFoundPage;
+export default Success;
 
 
 const Wrapper = styled.div``

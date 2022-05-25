@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Footer from '../layout/Footer';
 import Navbar from '../layout/Navbar';
-import About from './About';
+
 import Categories from './categories/Categories';
-import Contact from './Contact';
+import Contact from '../Contact';
 import Gallery from './Gallery';
 import Hero from './Hero';
 import Testimonials from "./testimonials/Testimonials";
@@ -21,9 +21,7 @@ const  Home :React.FC = () => {
           <Hero/>
           <Categories/>
           <Testimonials/>
-          <About/>
-          <Gallery/>
-          <Contact/>
+          <Gallery/>      
         <Footer/>
     </div>
 </Wrapper> 
