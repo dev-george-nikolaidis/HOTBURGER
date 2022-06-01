@@ -1,9 +1,9 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
-import { MenuProductCategory } from '../../context/Constants';
+import { ActionTypes, MenuProductCategory } from '../../context/Constants';
 import { QueryProps } from './CategoryMenuFilter';
-import CategoryMenuFilter from "./CategoryMenuFilter";
+import MenuCardSingle from './MenuCardSingle';
 
 
 
@@ -16,7 +16,7 @@ const query = graphql`
     nodes {
       title
       price
-      menu_category
+      category
       description
       id
       menu_image {
@@ -36,37 +36,17 @@ const query = graphql`
 
 const  MenuCard :React.FC = () => {
 
+  
   const queryData:QueryProps = useStaticQuery(query)
- 
 
 
 
   return (
 <Wrapper> 
-       
-      <h2>Burgers</h2>
-      <p className="sub-title">All beef is 100% certified Angus beef from Aspen Ridge</p>
-      <div className="grid-container">
-        <CategoryMenuFilter queryData={queryData} filterValue ={MenuProductCategory.MEAT_BURGER} />
-      </div>
-     
-       <h2>Plant Base Burgers</h2>
-       <p className="sub-title">Vegan & veggie-friendly menu exclusively crafted with the Impossible Burger on Vegan Bun</p>
-       <div className="grid-container">
-       <CategoryMenuFilter queryData={queryData} filterValue ={MenuProductCategory.PLANT_BURGER} />
-       </div>
-       <h2>Chicken</h2>
-       <p className="sub-title">All sandwiches are made with all-natural chicken breast</p>
-       <div className="grid-container">
-       <CategoryMenuFilter queryData={queryData} filterValue ={MenuProductCategory.CHICKEN} />
-       </div>
-       <h2>Wings</h2>
-       <p className="sub-title">Delicious chicken wings made with extra love for our  customers</p>
-       <div className="grid-container">
-       <CategoryMenuFilter queryData={queryData} filterValue ={MenuProductCategory.WINGS} />
-       </div>
-
-   
+        <MenuCardSingle  filterCategoryValue={MenuProductCategory.MEAT_BURGER} title='Burgers' queryData={queryData} subtitle="All beef is 100% certified Angus beef from Aspen Ridge" />
+        <MenuCardSingle filterCategoryValue={MenuProductCategory.PLANT_BURGER}  title='Plant Base Burgers' queryData={queryData} subtitle="Vegan & veggie-friendly menu exclusively crafted with the Impossible Burger on Vegan Bun" />
+        <MenuCardSingle filterCategoryValue={MenuProductCategory.CHICKEN} title='Chicken' queryData={queryData} subtitle="All sandwiches are made with all-natural chicken breast" />
+        <MenuCardSingle  filterCategoryValue={MenuProductCategory.WINGS}  title='Wings' queryData={queryData} subtitle="Delicious chicken wings made with extra love for our  customers" />
 </Wrapper>
 );
 };
@@ -85,28 +65,7 @@ const Wrapper = styled.section`
   
     
    
-    .grid-container{
-      display: grid;  
-      grid-gap: 2rem;
-      grid-template-columns: repeat(auto-fill,minmax(30rem,1fr));   
-      margin: 0 4rem;
-    }
-
-
-
-    h2{
-      text-align: center;
-      font-size: 3.5rem;
-      margin: 2rem 0;
-    }
-
-    .sub-title{
-      text-align: center;
-      font-family: var(--ff-primary-3);
-      font-weight: 300;
-      font-size:2rem;
-      margin-bottom: 5rem;
-    }
+   
 
 
 

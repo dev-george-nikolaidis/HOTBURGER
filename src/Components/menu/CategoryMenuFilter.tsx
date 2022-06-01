@@ -12,7 +12,7 @@ export type QueryProps = {
       nodes: Array<{
         title: string
         price: number
-        menu_category: string
+        category: string
         description: string
         id: string
         menu_image: {
@@ -53,6 +53,7 @@ export type QueryProps = {
   }
 
   const  CategoryMenuFilter :React.FC<Props> = ({queryData,filterValue}) => {
+
     const {dispatch} = useHotburgerContext();
 
     
@@ -64,8 +65,9 @@ export type QueryProps = {
           const description = e.currentTarget.getAttribute("data-description");
           const menuCategory = e.currentTarget.getAttribute("data-menu-category");
           const price = Number(e.currentTarget.getAttribute("data-price"));
-        
-          dispatch({type:ActionTypes.SET_CURRENT_ITEM_CLICKED,payload:{title,imageUrl,description,menuCategory,price}})
+          const productId = (e.currentTarget.getAttribute("data-product-id"))
+         
+          dispatch({type:ActionTypes.SET_CURRENT_ITEM_CLICKED,payload:{title,imageUrl,description,menuCategory,price,productId}})
     }
 
 
@@ -73,10 +75,10 @@ export type QueryProps = {
     const categoryMenuFilter =  (data:QueryProps,filterValue:string) =>{
 
       let category = data.allStrapiMenu.nodes.map((menuProduct)=>{
+
+        const  {id,title,description,price,menu_image,category , menu_image:{localFile:{url}}  } = menuProduct;
   
-        const  {id,title,description,price,menu_image,menu_category , menu_image:{localFile:{url}}  } = menuProduct;
-  
-        if (menu_category != filterValue) {
+        if (category != filterValue) {
           return;
         }
         
@@ -93,7 +95,7 @@ export type QueryProps = {
                       <p className="price">${price}</p>
                   </div>
                   <p className="description">{description}</p>
-                  <button className="btn-cta" data-title={[title]} data-url={[url]} data-description={[description]} data-price={[price]} data-menu-category={[menu_category]}  onClick={(e)=>handleClick(e)}  >
+                  <button className="btn-cta" data-title={[title]} data-url={[url]} data-description={[description]} data-price={[price]} data-menu-category={[category]} data-product-id={[id]}  onClick={(e)=>handleClick(e)}  >
                     <FaCartPlus  className="btn-icon"/> 
                     <span className="button-text"> Add to Card</span>
                   </button>

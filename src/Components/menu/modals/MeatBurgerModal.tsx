@@ -8,6 +8,7 @@ import ModalButtons from './ModalButtons';
 
 interface MeatBurgerProps{ 
   resetClickedItem:any
+
 }
 
 
@@ -78,6 +79,7 @@ const  MeatBurgerModal :React.FC<MeatBurgerProps> = ({resetClickedItem}) => {
           temperature = {temperature}
            message={message} 
            resetClickedItem={resetClickedItem}
+         
            />
          
       </div>

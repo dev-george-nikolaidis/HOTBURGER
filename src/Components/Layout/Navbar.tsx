@@ -31,12 +31,12 @@ const  Navbar :React.FC = () => {
             <li>
                  <Link to="/contact" activeStyle={active}>Contact</Link>
              </li>
-            <li>
+            {/* <li>
                  <Link to="/app/login" activeStyle={active}>Login</Link>
              </li>
             <li>
                  <Link to="/app/sign-up" activeStyle={active}>Sign up</Link>
-             </li>
+             </li> */}
     
             <li>
               <Link to="/app/cart"  className="cart-container-link">  <FaShoppingCart className="cart-icon" />  <span className="cart-text">{cart.amount}</span> </Link>

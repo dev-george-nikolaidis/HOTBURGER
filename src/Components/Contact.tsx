@@ -18,7 +18,7 @@ const  Contact :React.FC = () => {
       <h2 className="section-title">Contacts us</h2>
       <div className="container">
         <div className="modal"></div>
-        <StaticImage src="../../assets/images/contact-background.png" alt="" className="background-image" />
+        <StaticImage src="../assets/images/contact-background.png" alt="" className="background-image" />
         <form  className="form" >
            <label htmlFor="Name">Name*</label>
             <input type="text" className="name" />

@@ -7,15 +7,15 @@ export enum ActionTypes {
  }
 
  export enum MenuProductCategory {
-    MEAT_BURGER = "meat_burger",
-    PLANT_BURGER = "plant_burger",
+    MEAT_BURGER = "meat-burger",
+    PLANT_BURGER = "plant-burger",
     CHICKEN = "chicken",
     DESSERT = "dessert",
     DRINKS = "drinks",
     FRIES = "fries",
-    KIDS_MENU = "kids_menu",
+    KIDS_MENU = "kids-menu",
     SALAD = "salad",
-    VEGAN_FRIES = "vegan_frees",
+    VEGAN_FRIES = "vegan-frees",
     WINGS = "wings"
 
 
@@ -63,7 +63,8 @@ export type CurrentItemClickedType ={
         imageUrl:string,
         description:string,
         menuCategory:string,
-        price:number,
+        price:number
+     
 }
 
    

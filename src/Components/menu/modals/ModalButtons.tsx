@@ -11,6 +11,7 @@ interface ModalButtonsProps{
     message:string ,
     imageUrl:string,
     resetClickedItem:any
+   
 }
 
 const  ModalButtons :React.FC<ModalButtonsProps> = ({temperature,message,resetClickedItem,imageUrl,price,title}) => {
@@ -31,7 +32,8 @@ const  ModalButtons :React.FC<ModalButtonsProps> = ({temperature,message,resetCl
                     message:message,
                     price:price,
                     temperature:temperature,
-                    quantity:quantity
+                    quantity:quantity,
+
 
                 },
                 price:price,

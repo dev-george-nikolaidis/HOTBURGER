@@ -26,6 +26,7 @@ const  Modal :React.FC = () => {
             imageUrl:"",
             menuCategory:"",
             price:0
+        
         }
     }})
     }

@@ -11,12 +11,16 @@ switch (action.type) {
   case  ActionTypes.TEST:
       return ({...state});
   case  ActionTypes.SET_CURRENT_ITEM_CLICKED:
-    return ({...state,currentItemClicked:{
+    return (
+      {
+        ...state
+        ,currentItemClicked:{
       title:action.payload.title,
       description:action.payload.description,
       imageUrl:action.payload.imageUrl,
       menuCategory:action.payload.menuCategory,
       price:action.payload.price
+  
     },menuCategory:action.payload.menuCategory
   });
   case  ActionTypes.RESET_CURRENT_ITEM_CLICKED:
@@ -26,6 +30,7 @@ switch (action.type) {
       imageUrl:action.payload.imageUrl,
       menuCategory:action.payload.menuCategory,
       price:action.payload.price
+
     },menuCategory:action.payload.menuCategory
   });
   case  ActionTypes.ADD_ITEM_TO_CART:

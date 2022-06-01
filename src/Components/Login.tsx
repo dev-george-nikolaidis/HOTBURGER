@@ -25,6 +25,7 @@ const  Login :React.FC<Props> =  () => {
 
       const loginUser = await res.json()
       console.log(loginUser)
+      // !save the user to context, need to create types.
   }
 
 

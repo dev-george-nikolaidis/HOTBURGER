@@ -13,7 +13,7 @@ const  About :React.FC = () => {
         <h2 className="section-title">What we do</h2>
         <p><span>HOT</span><span>BURGER</span> offers burger lovers a better, more flavorful burger alternative usually only found in gourmet restaurants but at a fraction of the price. Go with traditional beef or choose from our vegan and vegetarian friendly burger menu. Our goal is to bring gourmet "fast-food" dining to you . We have a wide range of menu items, many of which are prepared in a way that tastes the way they should taste, all created from scratch with only the freshest ingredients.</p>
       </div>
-      <StaticImage src="../../assets/images/about.png" alt="" className='about-image'/>
+      <StaticImage src="../assets/images/about.png" alt="" className='about-image'/>
 </Wrapper>
 );
 };
