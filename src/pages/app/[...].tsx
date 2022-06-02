@@ -6,6 +6,8 @@ import Success from '../../components/Success';
 import NotFoundPage from '../404';
 import Login from '../../components/Login';
 import SignUp from '../../components/SignUp';
+import Checkout  from '../../components/Checkout';
+
 
 
 // Here can use my dynamic routes
@@ -19,6 +21,7 @@ const  App :React.FC = () => {
           <Login   path="/login" />
           <SignUp   path="/sign-up" />
           <Success   path="/success" />
+          <Checkout   path="/checkout" />
           <NotFoundPage   path="*"  />
       </MyRouter>
     
