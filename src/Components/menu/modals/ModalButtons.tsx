@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { FiMinusCircle ,FiPlusCircle} from "react-icons/fi";
 import { useHotburgerContext } from '../../../context/hotburger/HotburgerContext';
 import { ActionTypes } from '../../../context/Constants';
+import uniqid from 'uniqid';
 
 interface ModalButtonsProps{
     temperature:string | null,
@@ -33,6 +34,7 @@ const  ModalButtons :React.FC<ModalButtonsProps> = ({temperature,message,resetCl
                     price:price,
                     temperature:temperature,
                     quantity:quantity,
+                    id:uniqid()
 
 
                 },

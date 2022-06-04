@@ -59,7 +59,7 @@ const Wrapper = styled.section`
      grid-column: 2 / 14;
     width: 100%;
     margin-bottom: 5rem;
-    background-color:#F7F3E3;
+    background-color:var(--clr-background-menu);
     border-radius: 5px;
     color:var(--clr-text-1);
   
