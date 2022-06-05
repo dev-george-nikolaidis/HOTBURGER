@@ -8,9 +8,10 @@ interface Props {
 
 const  EditProduct :React.FC<Props> = ({id}) => {
 
+    
   return (
 <Wrapper>
-    <FaRegEdit/>
+    <FaRegEdit className="edit"/>
     <p>Edit</p>
 </Wrapper>
 );
@@ -26,6 +27,14 @@ const Wrapper = styled.div`
 
     p{
         margin-left:1rem;
+    }
+    .edit{
+        cursor: pointer;
+    transition: var(--transition);
+    }
+
+    .edit:hover{
+        color:var(--clr-success);
     }
 
 `

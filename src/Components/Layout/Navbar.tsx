@@ -22,9 +22,7 @@ const  Navbar :React.FC = () => {
             <li>
                <Link to="/"activeStyle={active} >Home</Link>
             </li>
-            <li>
-              <Link to="/menu" activeStyle={active}>Menu</Link>
-            </li>
+         
             <li>
                 <Link to="/about" activeStyle={active}>About</Link>
              </li>
@@ -37,6 +35,9 @@ const  Navbar :React.FC = () => {
             <li>
                  <Link to="/app/sign-up" activeStyle={active}>Sign up</Link>
              </li> */}
+                <li>
+              <Link to="/menu" activeStyle={active}>Menu</Link>
+            </li>
     
             <li>
               <Link to="/app/cart"  className="cart-container-link">  <FaShoppingCart className="cart-icon" />  <span className="cart-text">{cart.amount}</span> </Link>

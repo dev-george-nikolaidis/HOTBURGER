@@ -67,6 +67,8 @@ const  UserDetails :React.FC = () => {
       </div>
         <textarea name="special_instructions"   onChange={(e=>onChangeHandler(e))}  ></textarea>
         <p>{userDetails.special_instructions.length}/500</p>
+           
+        <button className="btn-cta">Create Order</button>
     </form>
 
 </Wrapper>
@@ -81,7 +83,7 @@ const Wrapper = styled.div`
       background-color:var(--clr-background-menu);
       grid-column: 2/7;
       color:var(--clr-title-2); 
-      height: 88rem;
+      height: 92rem;
 
       h2{
         padding: 4rem;
@@ -120,6 +122,10 @@ const Wrapper = styled.div`
         height:10rem;
         resize: none;
         margin: 1rem 0;
+      }
+
+      button{
+        margin-top: 2rem;
       }
 
 `

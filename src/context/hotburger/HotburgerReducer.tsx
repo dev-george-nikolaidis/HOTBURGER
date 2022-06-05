@@ -41,6 +41,14 @@ switch (action.type) {
         totalPrice : state.cart.totalPrice + action.payload.price * action.payload.quantity
     }
   });
+  case  ActionTypes.REMOVE_ITEM_FROM_CART:
+    console.log(action.payload.id)
+    return ({...state,cart:{
+      products: state.cart.products.filter((product:any) => product.id != action.payload.id ) ,
+        amount : state.cart.amount - 1 ,
+        totalPrice : state.cart.totalPrice - action.payload.price * action.payload.quantity
+    }
+  });
 default:
 return state;
 }
