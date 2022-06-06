@@ -38,12 +38,12 @@ export default CartProducts;
 
 const Wrapper = styled.section`
 
-    overflow-y: scroll;
+    overflow-y: auto;
     background-color:var(--clr-background-menu);
     color:var(--clr-title-2); 
      grid-column: 7/14;
      border-radius: 5px;
-     height: 92rem;
+     height: 95rem;
     
 
      .title-container{

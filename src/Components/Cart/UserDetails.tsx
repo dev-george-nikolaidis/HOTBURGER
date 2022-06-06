@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import * as yup from 'yup';
+import { customSchema, customSchemaValidation, Schema } from '../../util/helpers';
+
+
+
+
+
+
 
 const  UserDetails :React.FC = () => {
+
   const [userDetails ,setUserDetails] = useState({
     name:"",
     email:"",
@@ -13,37 +22,79 @@ const  UserDetails :React.FC = () => {
 
 
   })
+
+  const[ errors, setErrors] = useState({
+    name:null,
+    email:null,
+    city:null,
+  })
+
+
+
 // onsubmit we will save the user in frond and send request to back when we press create order
 
  const  onChangeHandler = (e:React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>)=>{
    const value =  e.currentTarget.value
+  
     setUserDetails({
       ...userDetails,
       [e.currentTarget.name]:value
     })
+
+    
   }
-  console.log(userDetails)
+  console.log("Remount")
+
+  const submitHandler =  (e:React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+
+      // Schema.validate({name:userDetails.name,email:userDetails.email},{
+      //   abortEarly:false
+      // }).catch(err=>{
+      //   console.log(err.value)
+      //   console.log(err.errors)
+     
+      // })
+
+      // customSchema(yup.string().email("Please insert a valid email address").required("Email is required"),userDetails.email,"email",errors,setErrors)
+    // customSchema(yup.string().min(2 ,"Name must be at least 2 characters").required("Name is required"),userDetails.name,"name",errors,setErrors)
+    // customSchema(yup.string().min(2 ,"City must be at least 2 characters").required(),userDetails.city,"city",errors,setErrors)
+  
+      customSchemaValidation(yup.string().min(2 ,"Name must be at least 2 characters").required("Name is required"),userDetails.name)
+
+    // setErrors({
+    //   ...errors,
+    //   name:null,
+    //   email:null,
+    //   city:null,
+    // })
+
+  }
+
+  // console.log(errors)
+
   return (
 <Wrapper>
   <h2>Delivery information</h2>
-    <form>
+    <form onSubmit={(e)=>submitHandler(e)}>
     <div className="form-column">
         <div className="label-container">
           <label htmlFor="name">Name</label>
           <span>*All Fields Required</span>
         </div>
         <input type="text" name="name" onChange={(e=>onChangeHandler(e))} />
-        {/* Display errors or success messages /green or red on submission*/}
+         <p>{errors.name ?  errors.name: "No errors?"}</p>
       </div>
       <div className="form-column">
          <label htmlFor="Email">Email</label>
           <input type="email" name="email" onChange={(e=>onChangeHandler(e))} />
-       {/* Display errors or success messages /green or red on submission*/}
+          <p>{errors.email ? errors.email: "No errors?"}</p>
       </div>
       <div className="form-column">
          <label htmlFor="City">City</label>
           <input type="text" name="city" onChange={(e=>onChangeHandler(e))} />
-       {/* Display errors or success messages /green or red on submission*/}
+          <p>{errors.city ? errors.city: "No errors?"}</p>
       </div>
       <div className="form-column">
          <label htmlFor="address">Delivery Address</label>
@@ -56,7 +107,7 @@ const  UserDetails :React.FC = () => {
        {/* Display errors or success messages /green or red on submission*/}
       </div>
       <div className="form-column">
-         <label htmlFor="Cellphone Number">Cellphone Number</label>
+         <label htmlFor="Telephone  Number">Telephone  Number</label>
           <input type="text" name="phone_number" onChange={(e=>onChangeHandler(e))} />
        {/* Display errors or success messages /green or red on submission*/}
       </div>
@@ -68,7 +119,7 @@ const  UserDetails :React.FC = () => {
         <textarea name="special_instructions"   onChange={(e=>onChangeHandler(e))}  ></textarea>
         <p>{userDetails.special_instructions.length}/500</p>
            
-        <button className="btn-cta">Create Order</button>
+        <button className="btn-cta" type="submit">Create Order</button>
     </form>
 
 </Wrapper>
@@ -83,7 +134,7 @@ const Wrapper = styled.div`
       background-color:var(--clr-background-menu);
       grid-column: 2/7;
       color:var(--clr-title-2); 
-      height: 92rem;
+      height: 95rem;
 
       h2{
         padding: 4rem;
