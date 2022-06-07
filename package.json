@@ -19,6 +19,7 @@
     "@stripe/stripe-js": "^1.31.0",
     "babel-plugin-styled-components": "^2.0.7",
     "dotenv": "^16.0.1",
+    "formik": "^2.2.9",
     "gatsby": "^4.13.1",
     "gatsby-plugin-image": "^2.13.0",
     "gatsby-plugin-manifest": "^4.13.0",
@@ -30,7 +31,6 @@
     "gatsby-source-strapi": "^2.0.0",
     "gatsby-transformer-remark": "^5.13.0",
     "gatsby-transformer-sharp": "^4.13.0",
-
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",

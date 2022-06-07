@@ -27,7 +27,7 @@ const  CartProducts :React.FC = () => {
         <h2>My Cart ( <span className="cart-quantity-text">{cart.products.length}</span> items)</h2>
          <p>$ {cart.totalPrice}</p>
      </div>
-     {cart.products.length === 0 ? <p className="empty">The Cart is empty </p> : null}
+     {cart.products.length > 0 && <p className="empty">The Cart is empty </p> }
     <DisplayProducts/>
 </Wrapper>
 );
@@ -43,7 +43,7 @@ const Wrapper = styled.section`
     color:var(--clr-title-2); 
      grid-column: 7/14;
      border-radius: 5px;
-     height: 95rem;
+     height: 100%;
     
 
      .title-container{

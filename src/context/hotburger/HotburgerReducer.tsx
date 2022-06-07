@@ -49,6 +49,13 @@ switch (action.type) {
         totalPrice : state.cart.totalPrice - action.payload.price * action.payload.quantity
     }
   });
+  // case  ActionTypes.TOGGLE_IS_CART_EMPTY:
+
+  //   return ({
+  //     ...state,
+  //     isCartEmpty:action.payload
+  //   }
+  // );
 default:
 return state;
 }

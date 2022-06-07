@@ -7,6 +7,7 @@ import Navbar from '../layout/Navbar';
 import CartProducts from './CartProducts';
 import UserDetails from './UserDetails';
 
+
 interface Props {
     path: string;
     

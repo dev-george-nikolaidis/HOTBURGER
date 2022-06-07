@@ -7,6 +7,7 @@ export interface HotburgerContextState {
     menuCategory: string;
     currentItemClicked:CurrentItemClickedType ;
     cart: CartType;
+
 }
 
 const initialState : HotburgerContextState = {
@@ -24,7 +25,9 @@ const initialState : HotburgerContextState = {
         ],
         amount: 0,
         totalPrice: 0,
-    }
+    },
+  
+    
     
 }
 
