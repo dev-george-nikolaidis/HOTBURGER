@@ -52,6 +52,7 @@ const Wrapper = styled.div`
 
     .remove{
         cursor: pointer;
+        font-size:1.6rem;
     transition: var(--transition);
     }
 
@@ -60,6 +61,7 @@ const Wrapper = styled.div`
     }
 
     p{
+        font-size:1.6rem;
         margin-left:1rem;
     }
 `

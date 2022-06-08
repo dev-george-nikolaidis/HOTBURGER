@@ -12,22 +12,15 @@ const  CartProducts :React.FC = () => {
 
   const {state:{cart}} = useHotburgerContext();
 
-  console.log(cart)
-
-    const clickHandler = (e:React.MouseEvent<HTMLDivElement>) => {
-        const id = e.currentTarget.getAttribute("data-id");
-        console.log(id)
-    };
-
 
 
   return (
 <Wrapper>
      <div className="title-container">
-        <h2>My Cart ( <span className="cart-quantity-text">{cart.products.length}</span> items)</h2>
-         <p>$ {cart.totalPrice}</p>
+        <h2>My Cart ( <span >{cart.products.length}</span> items)</h2>
+         <p>  Total $<span >{cart.totalPrice}</span>   </p>
      </div>
-     {cart.products.length > 0 && <p className="empty">The Cart is empty </p> }
+     {cart.products.length === 0 ? <p className="empty">The Cart is empty </p> : null}
     <DisplayProducts/>
 </Wrapper>
 );
@@ -52,8 +45,9 @@ const Wrapper = styled.section`
          display: flex;
          justify-content:space-between;
      }
-    .cart-quantity-text{
+    span{
         color:var(--clr-primary-1);
+        font-weight: bold;
     }
  
 
@@ -61,6 +55,7 @@ const Wrapper = styled.section`
     .empty{
         padding: 2rem 4rem;
         color:red;
+        font-size: 2rem;
     }
 
 

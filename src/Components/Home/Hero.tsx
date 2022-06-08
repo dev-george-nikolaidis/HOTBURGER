@@ -10,7 +10,7 @@ const  Hero :React.FC = () => {
   return (
 <Wrapper>
         <div className="modal"></div>
-        <StaticImage src="../../assets/images/Hero.png" alt="Hero image of the HOTBURGER" class='hero-image'/>
+        <StaticImage src="../../assets/images/Hero.png" alt="Hero image of the HOTBURGER" className='hero-image'/>
         <div className="container">
           <h1>The best handmade burgers in  town made with love for you</h1>
           <Link to="/menu" className="btn-cta">our menu</Link>

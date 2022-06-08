@@ -35,7 +35,7 @@ const  DisplayProducts :React.FC = () => {
                     <div className="text-container">
                         <div className="title-price-container">
                             <h3>{product.title}</h3>
-                            <p>${product.price} X {product.quantity}</p>
+                            <p className="product-price">${product.price} X {product.quantity}</p>
                         </div>
                         {product.temperature && <p className="temperature">Temperature: {product.temperature}</p>}
                         {product.message && <p className="message">Message: {product.message}</p>}
@@ -103,18 +103,22 @@ const Wrapper = styled.div`
     }
 
     .temperature{
-    
+        font-size:1.6rem;
     }
     .message{
         width: 30rem;
         overflow: hidden;
         white-space: nowrap;
          text-overflow: ellipsis;
+         font-size:1.6rem;
         
     }
 
     .actions-container{
      display: flex;
         
+    }
+    .product-price{
+        font-size:1.6rem;
     }
 `
