@@ -5,7 +5,8 @@ import styled from 'styled-components';
 import Footer from '../layout/Footer';
 import Navbar from '../layout/Navbar';
 import CartProducts from './CartProducts';
-import UserDetails from './UserDetails';
+import UserForm from './UserForm';
+
 
 
 interface Props {
@@ -21,7 +22,7 @@ const  Cart :React.FC<Props> = () => {
 <Wrapper>
     <div className="grid-container">
     <Navbar/>
-     <UserDetails/>
+     <UserForm/>
      <CartProducts/>
     <Footer/>
     </div>

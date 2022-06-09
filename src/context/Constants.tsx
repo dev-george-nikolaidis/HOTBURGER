@@ -5,6 +5,8 @@ export enum ActionTypes {
     ADD_ITEM_TO_CART = "ADD_ITEM_TO_CART",
     REMOVE_ITEM_FROM_CART = "REMOVE_ITEM_FROM_CART",
     TOGGLE_IS_CART_EMPTY = "TOGGLE_IS_CART_EMPTY",
+    STORE_SESSION = "STORE_SESSION",
+    CREATE_USER="CREATE_USER"
 
  }
 
@@ -69,7 +71,15 @@ export type CurrentItemClickedType ={
      
 }
 
-   
+export type UserType ={
+   id:string,
+   name:string,
+   email:string,
+   city:string,
+   address:string,
+   postCode:number,
+   phoneNumber:string
+}
    
 export const dummyProducts = {
         "products":[

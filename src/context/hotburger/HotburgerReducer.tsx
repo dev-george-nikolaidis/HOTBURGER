@@ -49,11 +49,26 @@ switch (action.type) {
         totalPrice : state.cart.totalPrice - action.payload.price * action.payload.quantity
     }
   });
-  // case  ActionTypes.TOGGLE_IS_CART_EMPTY:
-
+  case  ActionTypes.STORE_SESSION:
+    console.log(action.payload)
+    return ({
+      ...state,
+      sessionId:action.payload
+    }
+  );
+  // case  ActionTypes.CREATE_USER:
+  //   console.log(action.payload)
   //   return ({
   //     ...state,
-  //     isCartEmpty:action.payload
+  //     user:{
+  //       id:action.payload.session_id,
+  //       name:action.payload.name,
+  //       email:action.payload.email,
+  //       city:action.payload.city,
+  //       address:action.payload.address,
+  //       postCode:action.payload.postCode,
+  //       phoneNumber:action.payload.phoneNumber
+  //     }
   //   }
   // );
 default:

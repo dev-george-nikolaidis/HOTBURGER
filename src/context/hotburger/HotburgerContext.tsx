@@ -1,5 +1,5 @@
 import React,{createContext,Dispatch,ReactNode,useContext,useReducer} from 'react';
-import { Action, CartType, CurrentItemClickedType } from '../Constants';
+import { Action, CartType, CurrentItemClickedType, UserType } from '../Constants';
 import { reducer } from './HotburgerReducer';
 
 
@@ -7,6 +7,8 @@ export interface HotburgerContextState {
     menuCategory: string;
     currentItemClicked:CurrentItemClickedType ;
     cart: CartType;
+    sessionId : string | null;
+   
 
 }
 
@@ -26,6 +28,8 @@ const initialState : HotburgerContextState = {
         amount: 0,
         totalPrice: 0,
     },
+    sessionId:null,
+
   
     
     

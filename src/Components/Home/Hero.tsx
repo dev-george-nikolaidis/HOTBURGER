@@ -2,11 +2,14 @@ import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
+import { useHotburgerContext } from '../../context/hotburger/HotburgerContext';
 
 
 
 const  Hero :React.FC = () => {
-
+  const {state:{sessionId,cart,user}} = useHotburgerContext()
+  // console.log(sessionId,cart.products)
+  console.log(user)
   return (
 <Wrapper>
         <div className="modal"></div>
