@@ -2,9 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Footer from '../layout/Footer';
 import Navbar from '../layout/Navbar';
-
 import Categories from './categories/Categories';
-import Contact from '../Contact';
 import Gallery from './Gallery';
 import Hero from './Hero';
 import Testimonials from "./testimonials/Testimonials";
@@ -44,8 +42,6 @@ const Wrapper = styled.section`
       grid-column-gap: 3rem;
 
 
-           /* grid-template-columns:[full-start] minmax(6rem, 1fr) [center-start] repeat(12, [col-start] minmax(min-content, 12rem) [col-end])
-      [center-end] minmax(6rem, 1fr) [full-end]; //12 col layout  */
   }
  
     

@@ -73,8 +73,7 @@ const  Testimonials :React.FC = () => {
   const [displayStart,setDisplayStart] = useState(0)
   const [displayEnd,setDisplayEnd] = useState(3)
  
-  // dispatch({type:ActionTypes.FETCH_TESTIMONIALS ,payload:queryData})
-  // console.log(testimonials)
+
   
   
   let displayData  =   queryData.allStrapiTestimonial.nodes.map(((data,index) =>{

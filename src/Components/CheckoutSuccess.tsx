@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import {useParams ,useLocation } from "@reach/router"
 import { useHotburgerContext } from '../context/hotburger/HotburgerContext';
 import { navigate } from 'gatsby';
-import { set } from 'react-hook-form';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { FaCheckCircle , FaCopy} from "react-icons/fa";
 
 interface Props {
     path: string;
@@ -16,9 +17,10 @@ const  CheckoutSuccess :React.FC<Props> = ({}) => {
   const {state:{sessionId}} = useHotburgerContext()
   const [paid ,setPaid] = useState(false)
   const [error,setError] = useState(null)
-
+  const [total ,setTotal] = useState(0)
   const param = useParams();
- 
+//  const  [clipboardValue ,setClipboard] = useState("")
+ const  [clipboardCopied ,setClipboardCopied] = useState(false)
  
   const indexOfEqual = param.session_id.indexOf("=")
   const sessionID = param.session_id.slice(indexOfEqual +1)
@@ -28,6 +30,7 @@ const  CheckoutSuccess :React.FC<Props> = ({}) => {
     navigate("/")
   }
 
+  console.log("Remounting")
   useEffect(()=>{
 
     const confirmPayment = async () => {
@@ -44,8 +47,9 @@ const  CheckoutSuccess :React.FC<Props> = ({}) => {
               try {
                 const res = await fetch("http://localhost:1340/api/orders/confirm-order",request)
                 const data = await res.json();
+                console.log(data)
                 setPaid(data.payment);
-
+                setTotal(data.total)
         } catch (err:any) {
           setError(err.message)
         }
@@ -72,16 +76,21 @@ const  CheckoutSuccess :React.FC<Props> = ({}) => {
      user =  JSON.parse(user);
      console.log(user)
      displaySuccess = (
-        <div>
-           <h1>Payment success</h1>
-           <p>{user.name}</p>
-           <button type="submit" onClick={clickHandler}>Home</button>
+        <div className="modal-container">
+        
+            <FaCheckCircle className="icon"/>
+             <h1>Success!</h1>
+           <p className="sub-text">{user.name} your request has been successfully processed</p>
+           <CopyToClipboard text={user.orderId} onCopy = {()=>setClipboardCopied(true)} >
+
+           <p className="order-text">To check your order status go to home page then click Order Status and provide your order id : <span>{user.orderId} <FaCopy className='copy-icon'/></span> </p>
+           </CopyToClipboard>
+           <button type="submit" className='btn-cta' onClick={clickHandler}>Return to home page</button>
         </div>
      )
    }
   
-  // !at the end when we redirect the user back we will clear the  localStorage
-  // window.localStorage.setItem("session_id","")
+
 
  
   return (
@@ -96,4 +105,48 @@ const  CheckoutSuccess :React.FC<Props> = ({}) => {
 export default CheckoutSuccess;
 
 
-const Wrapper = styled.div``
+const Wrapper = styled.section`
+  /* background-color: var(--clr-success); */
+  height:100vh;
+  position: relative;
+
+  .modal-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align:center;
+   transform: translate(-50%, -50%);
+    /* border: 1px solid #000; */
+  
+    /* background:red; */
+  }
+  
+   .title-container{
+    
+   }
+
+  .icon{
+    font-size:8rem;
+    color:var(--clr-success);
+    
+  }
+
+  .sub-text{
+    font-size:1.6rem;
+  }
+  .order-text{
+    font-size:1.6rem;
+    margin: 1rem 0;
+  }
+
+  span{
+    font-weight: bold;
+  }
+
+  .copy-icon{
+    transition: var(--transition);
+    &:hover{
+      color:var(--clr-success);
+    }
+  }
+`

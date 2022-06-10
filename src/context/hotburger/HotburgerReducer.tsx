@@ -56,6 +56,13 @@ switch (action.type) {
       sessionId:action.payload
     }
   );
+  case  ActionTypes.CHECKOUT_INDENT:
+    console.log(action.payload)
+    return ({
+      ...state,
+      checkout:action.payload
+    }
+  );
   // case  ActionTypes.CREATE_USER:
   //   console.log(action.payload)
   //   return ({

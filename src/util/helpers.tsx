@@ -11,6 +11,31 @@ export const validationSchema = yup.object().shape({
   textarea:yup.string()
 })
 
+export const contactFormSchema = yup.object().shape({
+  name:yup.string().min(2 ,"Name must be at least 2 characters").required("Name is required"),
+  email:yup.string().email("Please insert a valid email address").required("Email is required"),
+  textarea:yup.string().required("Textarea is required")
+})
 
+
+
+
+export const asyncFetchFun = async(promise:any) =>{
+  try {
+    const res = await promise
+    const data = await res.json();
+    return [data,null]
+  } catch (error) {
+    console.log(error)
+    return [null,error]
+  }
+}
+
+// Example
+
+// const promise = fetch("",{})
+// async function main (){
+//   const [data,error] = await asyncFetchFun(promise)
+// }
 
 

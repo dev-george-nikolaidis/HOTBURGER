@@ -6,7 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { validationSchema } from '../../util/helpers';
 import { ActionTypes } from '../../context/Constants';
 import {useNavigate } from "@reach/router";
-
+import uniqid from 'uniqid';
 
 
 
@@ -18,13 +18,14 @@ type UserSubmitForm  = {
   postCode:number,
   phoneNumber:string,
   textarea:string
+
 }
 
 
 
 const  UserForm :React.FC = () => {
 
-  const {state:{cart,sessionId},dispatch} = useHotburgerContext();
+  const {state:{cart,sessionId,checkout},dispatch} = useHotburgerContext();
   const  navigate = useNavigate()
   const {
     register,
@@ -44,11 +45,12 @@ const  UserForm :React.FC = () => {
     
       
     if (cart.products.length > 0) {
-      const userDetails = data;
+      let userDetails = data;
        const productsData =  cart.products;
-
+        const orderId = uniqid()
+        
           const postData = async()=>{
-
+            
             const request = {
               method: 'POST',
               headers: {
@@ -56,7 +58,8 @@ const  UserForm :React.FC = () => {
               },
               body: JSON.stringify({
                 productsData ,
-                userDetails
+                userDetails,
+                orderId
               })
             }
               try {
@@ -72,7 +75,9 @@ const  UserForm :React.FC = () => {
                   city:userDetails.city,
                   address:userDetails.address,
                   postCode:userDetails.postCode,
-                  phoneNumber:userDetails.phoneNumber}
+                  phoneNumber:userDetails.phoneNumber,
+                  orderId:orderId
+                }
                   
                   window.localStorage.setItem("session_id",data.session_id) 
                   window.localStorage.setItem("user",JSON.stringify(user))
@@ -90,6 +95,9 @@ const  UserForm :React.FC = () => {
   };
  }
 
+ const editOrderHandler = () =>{
+     dispatch({type:ActionTypes.CHECKOUT_INDENT , payload:!checkout})
+ }
 
 
  return (
@@ -135,9 +143,9 @@ const  UserForm :React.FC = () => {
             <label htmlFor="Your Message">Your Message</label>
             <span  className="text-required">Optional</span>
         </div>
-          <textarea    {...register('textarea')}     ></textarea>
-             
-          <button className="btn-cta" type="submit"  >Create Order</button>
+          <textarea     ></textarea>
+            <button className="btn-cta" type="submit"  >Create Order</button>
+            <button className="btn-ghost" onClick={editOrderHandler}>Edit order</button>
       </form>
   
   </Wrapper>
@@ -150,9 +158,11 @@ const  UserForm :React.FC = () => {
   const Wrapper = styled.div`
   border-radius : 5px;
   background-color:var(--clr-background-menu);
-  grid-column: 2/7;
+  /* grid-column: 2/7; */
   color:var(--clr-title-2); 
   height: 100%;
+
+
 
   h2{
     padding: 4rem;
@@ -200,7 +210,7 @@ const  UserForm :React.FC = () => {
   }
 
   button{
-    margin: 2rem 0;
+    margin: 1rem 0;
     width: 100%;
   }
 
@@ -219,8 +229,6 @@ const  UserForm :React.FC = () => {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     opacity: 0;
-
-
   
   }
 `

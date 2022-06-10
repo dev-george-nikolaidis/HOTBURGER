@@ -35,7 +35,10 @@ const  Navbar :React.FC = () => {
             <li>
                  <Link to="/app/sign-up" activeStyle={active}>Sign up</Link>
              </li> */}
-                <li>
+            <li>
+              <Link to="/app/check-order" activeStyle={active}>Order Status</Link>
+            </li>
+            <li>
               <Link to="/menu" activeStyle={active}>Menu</Link>
             </li>
     

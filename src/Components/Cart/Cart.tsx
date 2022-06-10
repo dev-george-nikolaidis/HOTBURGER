@@ -22,7 +22,7 @@ const  Cart :React.FC<Props> = () => {
 <Wrapper>
     <div className="grid-container">
     <Navbar/>
-     <UserForm/>
+     {/* <UserForm/> */}
      <CartProducts/>
     <Footer/>
     </div>

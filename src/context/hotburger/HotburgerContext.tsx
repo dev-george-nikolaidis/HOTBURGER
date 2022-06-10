@@ -8,7 +8,7 @@ export interface HotburgerContextState {
     currentItemClicked:CurrentItemClickedType ;
     cart: CartType;
     sessionId : string | null;
-   
+   checkout : boolean;
 
 }
 
@@ -29,8 +29,8 @@ const initialState : HotburgerContextState = {
         totalPrice: 0,
     },
     sessionId:null,
-
-  
+    checkout:false
+    
     
     
 }

@@ -40,11 +40,11 @@ const  DisplayProducts :React.FC = () => {
                         {product.temperature && <p className="temperature">Temperature: {product.temperature}</p>}
                         {product.message && <p className="message">Message: {product.message}</p>}
                         <div className="actions-container">
-                            <EditProduct id={product.id}/>
+                            {/* <EditProduct id={product.id}/> */}
                             <RemoveProduct id={product.id} />
                         </div>
                     </div>
-                   
+                
                 </div>
             )
         })
@@ -62,7 +62,8 @@ export default DisplayProducts;
 
 
 const Wrapper = styled.div`
-          
+        margin: 4rem 0;
+
     h3{
         font-size: 2.2rem;
         
@@ -73,8 +74,10 @@ const Wrapper = styled.div`
         padding: 0 4rem;
         margin-bottom: 1.5rem;
         width: 100%;
-  
-        
+     
+     &:hover{
+        background-color:#dfd4c4;
+     }   
     }
 
 
