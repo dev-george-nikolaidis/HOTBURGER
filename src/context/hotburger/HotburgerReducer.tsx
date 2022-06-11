@@ -63,6 +63,13 @@ switch (action.type) {
       checkout:action.payload
     }
   );
+  case  ActionTypes.FETCH_ORDER:
+    console.log(action.payload)
+    return ({
+      ...state,
+      order:action.payload
+    }
+  );
   // case  ActionTypes.CREATE_USER:
   //   console.log(action.payload)
   //   return ({

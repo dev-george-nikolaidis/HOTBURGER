@@ -7,7 +7,8 @@ export enum ActionTypes {
     TOGGLE_IS_CART_EMPTY = "TOGGLE_IS_CART_EMPTY",
     STORE_SESSION = "STORE_SESSION",
     CREATE_USER="CREATE_USER",
-    CHECKOUT_INDENT = "CHECKOUT_INDENT"
+    CHECKOUT_INDENT = "CHECKOUT_INDENT",
+    FETCH_ORDER = "FETCH_ORDER"
 
  }
 
@@ -72,6 +73,18 @@ export type CurrentItemClickedType ={
      
 }
 
+export type OrderType = {
+   name:string,
+   city:string,
+   address:string,
+   post_code:string,
+   amount:number,
+   phone_number:string,
+   special_instructions:string | null,
+   orderStatus:string,
+   products:any
+}
+
 export type UserType ={
    id:string,
    name:string,
@@ -82,33 +95,3 @@ export type UserType ={
    phoneNumber:string
 }
    
-export const dummyProducts = {
-        "products":[
-                {
-                   "title":"The Nashville Hot",
-                   "image":"https://res.cloudinary.com/dsrzlxnkc/image/upload/v1652256337/52e13c6a_8c42_4dee_b1a4_e52efc5caa66_17_4bd52fd155.jpg?",
-                   "message":"BRING MY BURGERS FUCKERS!",
-                   "price":"12.9 ",
-                   "quantity":1,
-                   "temperature":"rare"
-                },
-                {
-                   "title":"The Classic",
-                   "image":"https://res.cloudinary.com/dsrzlxnkc/image/upload/v1652256337/52e13c6a_8c42_4dee_b1a4_e52efc5caa66_17_4bd52fd155.jpg?",
-                   "message":"BRING MY BURGERS FUCKERS!",
-                   "price":"100",
-                   "quantity":10,
-                   "temperature":"rare"
-                },
-                {
-                   "title":"The Classic",
-                   "image":"https://res.cloudinary.com/dsrzlxnkc/image/upload/v1652256337/52e13c6a_8c42_4dee_b1a4_e52efc5caa66_17_4bd52fd155.jpg?",
-                   "message":"BRING MY BURGERS FUCKERS!",
-                   "price":"11",
-                   "quantity":1,
-                   "temperature":"rare"
-                }
-                
-        ]
-          
-      }

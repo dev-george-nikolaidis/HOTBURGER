@@ -6,6 +6,7 @@ import styled from 'styled-components';
 
 const  About :React.FC = () => {
 
+
   return (
 <Wrapper id="about">
       <div className="modal"></div>
@@ -15,6 +16,7 @@ const  About :React.FC = () => {
       </div>
       <StaticImage src="../assets/images/about.png" alt="" className='about-image'/>
 </Wrapper>
+
 );
 };
 

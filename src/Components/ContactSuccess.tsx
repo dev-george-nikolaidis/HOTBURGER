@@ -12,17 +12,12 @@ const  ContactSuccess :React.FC<Props> = ({message}) => {
 
   return (
 <Wrapper>
-
         <div className="container">
             <FaCheckCircle className="icon"/>
             <h2>Success!</h2>
             <p>{message}</p>
              <Link to="/" className="btn-cta">Home</Link>
         </div>
-
-    
-
-    
 </Wrapper>
 );
 };

@@ -1,39 +1,31 @@
-import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
-
+import FetchOrderStatus from './FetchOrderStatus';
 import Footer from '../layout/Footer';
 import Navbar from '../layout/Navbar';
-import CartProducts from './CartProducts';
-import UserForm from './UserForm';
-
-
 
 interface Props {
     path: string;
-    
-}
+  }
+  
+const  OrderStatus :React.FC<Props> = () => {
 
-
-
-const  Cart :React.FC<Props> = () => {
- 
   return (
 <Wrapper>
     <div className="grid-container">
         <Navbar/>
-        <CartProducts/>
+          <FetchOrderStatus/>
         <Footer/>
     </div>
 </Wrapper>
 );
 };
 
-export default Cart;
+export default OrderStatus;
 
 
 const Wrapper = styled.section`
-      background-color:var(--clr-background-1);
+    background-color:var(--clr-background-1);
      color:var(--clr-title-1); 
     
      .grid-container{

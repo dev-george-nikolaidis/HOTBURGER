@@ -19,7 +19,6 @@ const  CheckoutSuccess :React.FC<Props> = ({}) => {
   const [error,setError] = useState(null)
   const [total ,setTotal] = useState(0)
   const param = useParams();
-//  const  [clipboardValue ,setClipboard] = useState("")
  const  [clipboardCopied ,setClipboardCopied] = useState(false)
  
   const indexOfEqual = param.session_id.indexOf("=")
@@ -30,7 +29,7 @@ const  CheckoutSuccess :React.FC<Props> = ({}) => {
     navigate("/")
   }
 
-  console.log("Remounting")
+  
   useEffect(()=>{
 
     const confirmPayment = async () => {
@@ -112,7 +111,7 @@ const Wrapper = styled.section`
 
   .modal-container{
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     text-align:center;
    transform: translate(-50%, -50%);
@@ -136,7 +135,7 @@ const Wrapper = styled.section`
   }
   .order-text{
     font-size:1.6rem;
-    margin: 1rem 0;
+    margin: 2rem 0;
   }
 
   span{

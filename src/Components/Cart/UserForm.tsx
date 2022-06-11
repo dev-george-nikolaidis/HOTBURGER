@@ -143,7 +143,7 @@ const  UserForm :React.FC = () => {
             <label htmlFor="Your Message">Your Message</label>
             <span  className="text-required">Optional</span>
         </div>
-          <textarea     ></textarea>
+          <textarea ></textarea>
             <button className="btn-cta" type="submit"  >Create Order</button>
             <button className="btn-ghost" onClick={editOrderHandler}>Edit order</button>
       </form>
@@ -204,6 +204,7 @@ const  UserForm :React.FC = () => {
 
   textarea{
     width: 100%;
+   
     height:10rem;
     resize: none;
     margin: 1rem 0;

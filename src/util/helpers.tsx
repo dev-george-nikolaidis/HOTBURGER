@@ -14,8 +14,16 @@ export const validationSchema = yup.object().shape({
 export const contactFormSchema = yup.object().shape({
   name:yup.string().min(2 ,"Name must be at least 2 characters").required("Name is required"),
   email:yup.string().email("Please insert a valid email address").required("Email is required"),
-  textarea:yup.string().required("Textarea is required")
+  textarea:yup.string().required("Message is required")
+
 })
+
+export const oderIdSchema =  yup.object().shape({
+
+  orderId: yup.string().min(2 ,"Order ID must be at least 2 characters").required("Order ID is required")
+
+})
+  
 
 
 

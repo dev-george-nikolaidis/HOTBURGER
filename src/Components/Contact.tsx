@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import {contactFormSchema} from "../util/helpers";
 import ContactSuccess from './ContactSuccess';
-import { FaCheckCircle } from "react-icons/fa";
+
 
 type UserSubmitForm  = { 
   name:string,
@@ -77,12 +77,6 @@ const  Contact :React.FC = () => {
 
   };
  
-  let displaySuccess = (
-          <div className="icon-container">
-            <FaCheckCircle className="success-icon"/>
-            <p className="success-text">{response.message}</p>
-          </div>
-  )
 
   return (
 <Wrapper >
@@ -146,18 +140,15 @@ position: relative;
 
   label{ 
     display: block;
-    font-family: var(--ff-primary-2);
-    font-weight: 500;
-    font-size: 1.8rem;
-    margin-bottom:0.5rem;
+    font-size: 1.6rem;
     
   }
 
   input{
     padding: 1rem;
+    border-radius: 0.5rem;
     width: 100%;
   
-    border-radius: 0.5rem;
   }
 
   textarea{
@@ -199,5 +190,10 @@ position: relative;
     font-size:8rem;
     color:var(--clr-success);
    
+  }
+
+
+  .section-title{
+    margin: 1rem;
   }
 `

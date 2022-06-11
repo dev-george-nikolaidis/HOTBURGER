@@ -27,6 +27,7 @@ const  DisplayProducts :React.FC = () => {
      if (cart.products.length > 0) {
 
         displayProducts = cart.products.map((product:Product,index:number) => {
+          
             return (
                 <div key={index} className="product-container"  >
                 

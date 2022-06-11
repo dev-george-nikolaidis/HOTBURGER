@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Navbar from './layout/Navbar';
+import Navbar from '../layout/Navbar';
 
 interface Props {
    path: string;
 }
 
 
-const  Login :React.FC<Props> =  () => {
+const  SignUp :React.FC<Props> =  () => {
   const [formData,setFormData] = useState({})
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) =>{
       e.preventDefault();
       console.log("from has been submitted!")
 
-    const res = await  fetch("http://localhost:1340/api/auth/local",{
+    const res = await  fetch("http://localhost:1340/api/auth/local/register",{
         method: "POST",
         headers: {
           'Content-Type': 'application/json'
@@ -23,9 +23,8 @@ const  Login :React.FC<Props> =  () => {
       })
 
 
-      const loginUser = await res.json()
-      console.log(loginUser)
-      // !save the user to context, need to create types.
+      const registerUserData = await res.json()
+      console.log(registerUserData)
   }
 
 
@@ -44,9 +43,10 @@ const  Login :React.FC<Props> =  () => {
     <div className="grid-container">
       <Navbar/>
       <form onSubmit={((e)=>handleSubmit(e))} >
-        <input type="text" placeholder="Username"  name="identifier" onChange={(e)=>handleChange(e)} />
+        <input type="text" placeholder="Username"  name="username" onChange={(e)=>handleChange(e)} />
+        <input type="email" placeholder="Email"  name="email" onChange={(e)=>handleChange(e)} />
         <input type="password" placeholder="Password"  name="password" onChange={(e)=>handleChange(e)} />
-       <button type="submit" >Login</button>
+       <button type="submit" >Register</button>
       </form>
     
   </div>
@@ -54,7 +54,7 @@ const  Login :React.FC<Props> =  () => {
 );
 };
 
-export default Login;
+export default SignUp;
 
 
 const Wrapper = styled.section`
@@ -78,7 +78,6 @@ const Wrapper = styled.section`
     left: 0;
     right: 0;
     bottom: 0;
-
     display: flex;
     justify-content:center;
     align-items: center;
