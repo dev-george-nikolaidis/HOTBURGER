@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Footer from '../layout/Footer';
 import Navbar from '../layout/Navbar';
-import Categories from './categories/Categories';
+// import Categories from './categories/Categories';
 import Gallery from './Gallery';
 import Hero from './Hero';
 import Testimonials from "./testimonials/Testimonials";
@@ -17,7 +17,7 @@ const  Home :React.FC = () => {
     <div className="grid-container">
         <Navbar/>
           <Hero/>
-          <Categories/>
+          {/* <Categories/> */}
           <Testimonials/>
           <Gallery/>      
         <Footer/>

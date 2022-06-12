@@ -55,16 +55,17 @@ const  UserForm :React.FC = () => {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
+                // Authorization: `Bearer ${process.env.REST_API_KEY}`
               },
               body: JSON.stringify({
-                productsData ,
+                productsData,
                 userDetails,
                 orderId
               })
             }
               try {
-
-                const res = await fetch("http://localhost:1340/api/orders/create-stripe-session",request)
+               
+                const res = await fetch("https://hotburger-app.herokuapp.com/api/orders/create-stripe-session",request)
                 const data = await res.json();
               
                 if (data) {

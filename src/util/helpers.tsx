@@ -14,14 +14,15 @@ export const validationSchema = yup.object().shape({
 export const contactFormSchema = yup.object().shape({
   name:yup.string().min(2 ,"Name must be at least 2 characters").required("Name is required"),
   email:yup.string().email("Please insert a valid email address").required("Email is required"),
-  textarea:yup.string().required("Message is required")
+  textarea:yup.string().required("Message is required"),
+  question:yup.string().required("Question is required"),
 
 })
 
 export const oderIdSchema =  yup.object().shape({
 
-  orderId: yup.string().min(2 ,"Order ID must be at least 2 characters").required("Order ID is required")
-
+  orderId: yup.string().required("Order ID is required"),
+  question:yup.string().required("Question is required")
 })
   
 
@@ -47,3 +48,6 @@ export const asyncFetchFun = async(promise:any) =>{
 // }
 
 
+export function getRandomNumberBetween(min:number,max:number){
+  return Math.floor(Math.random()*(max-min+1)+min);
+}

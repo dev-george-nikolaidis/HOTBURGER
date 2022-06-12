@@ -44,7 +44,7 @@ const  CheckoutSuccess :React.FC<Props> = ({}) => {
               body: JSON.stringify({id:sessionID})
             }
               try {
-                const res = await fetch("http://localhost:1340/api/orders/confirm-order",request)
+                const res = await fetch("https://hotburger-app.herokuapp.com/api/orders/confirm-order",request)
                 const data = await res.json();
                 console.log(data)
                 setPaid(data.payment);

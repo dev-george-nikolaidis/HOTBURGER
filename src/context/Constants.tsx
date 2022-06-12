@@ -8,21 +8,21 @@ export enum ActionTypes {
     STORE_SESSION = "STORE_SESSION",
     CREATE_USER="CREATE_USER",
     CHECKOUT_INDENT = "CHECKOUT_INDENT",
-    FETCH_ORDER = "FETCH_ORDER"
+    FETCH_ORDER = "FETCH_ORDER",
+    SET_CURRENT_CATEGORY = "SET_CURRENT_CATEGORY",
 
  }
 
  export enum MenuProductCategory {
-    MEAT_BURGER = "meat-burger",
-    PLANT_BURGER = "plant-burger",
-    CHICKEN = "chicken",
-    DESSERT = "dessert",
-    DRINKS = "drinks",
-    FRIES = "fries",
-    KIDS_MENU = "kids-menu",
-    SALAD = "salad",
-    VEGAN_FRIES = "vegan-frees",
-    WINGS = "wings"
+   BEEF_BURGER = "BEEF-BURGER",
+   CHICKEN_BURGER = "CHICKEN-BURGER",
+   TURKEY_BURGER = "TURKEY-BURGER",
+   BEAN_BURGER = "BEAN-BURGER",
+   SALAD = "SALAD",
+   KID_MENU = "KID-MENU",
+   BEVERAGES = "BEVERAGES",
+   FRIES = "FRIES",
+   DESSERT = "DESSERT"
 
 
  }

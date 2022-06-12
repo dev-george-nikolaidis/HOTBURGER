@@ -3,21 +3,29 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import {contactFormSchema} from "../util/helpers";
+import {contactFormSchema, getRandomNumberBetween} from "../util/helpers";
 import ContactSuccess from './ContactSuccess';
 
 
 type UserSubmitForm  = { 
   name:string,
   email:string,
-  textarea:string
+  textarea:string,
+  question:string,
 
 }
+
+const value1 =getRandomNumberBetween(1,5)
+const value2 =getRandomNumberBetween(1,5)
+const total = value1 + value2
+
+
 const  Contact :React.FC = () => {
   const [response ,setResponse] = useState({
     success:false,
     message:""
   })
+  const [questionError, setQuestionError] = useState("")
 
   const {
     register,
@@ -34,18 +42,20 @@ const  Contact :React.FC = () => {
 
 
   const onSubmit = (formData: UserSubmitForm) => {
-    
-      
 
-        
           const postData = async()=>{
-            const messagePayload ={
           
+            if (+formData.question != total) {
+              setQuestionError("Answer is incorrect, please try again");
+              return;
+            }
+           
+            const messagePayload ={
                 name:formData.name,
                 email:formData.email,
                 textarea:formData.textarea
-              
             }
+
             const request = {
               method: 'POST',
               headers: {
@@ -57,7 +67,7 @@ const  Contact :React.FC = () => {
             }
               try {
 
-                const res = await fetch("http://localhost:1340/api/contact-form",request)
+                const res = await fetch("https://hotburger-app.herokuapp.com/api/contact-form",request)
                 const data = await res.json();
               
                 if (data) {
@@ -73,6 +83,7 @@ const  Contact :React.FC = () => {
               }    
         
     }
+
     postData()
 
   };
@@ -89,16 +100,24 @@ const  Contact :React.FC = () => {
         <div className="modal"></div>
         <StaticImage src="../assets/images/contact-background.png" alt="" className="background-image" />
         <form onSubmit={handleSubmit(onSubmit)} className="form">
-            {/* {response.success && displaySuccess } */}
+          
            <label htmlFor="Name">Name*</label>
            <input type="text"  {...register('name')}  className={`form-control ${errors.name ? 'is-invalid' : ''}`}  />
            {errors.name  ? <p className="error-text">{errors.name.message}</p>   :  <p className="error-ghost">No Error</p>}  
+
            <label htmlFor="Name">Email*</label>
            <input  type="email"  {...register('email')}  className={`form-control ${errors.email ? 'is-invalid' : ''}`}/>
             {errors.email  ? <p className="error-text">{errors.email.message}</p>   :  <p className="error-ghost">No Error</p>}    
+
            <label htmlFor="message">Message*</label>
             <textarea    {...register('textarea')}   />
             {errors.textarea  ? <p className="error-text">{errors.textarea.message}</p>   :  <p className="error-ghost">No Error</p>}  
+
+            <label htmlFor="question">What is {value1} + {value2}?*</label>
+           <input  type="text"  {...register('question')}  className={`form-control ${errors.question ? 'is-invalid' : ''}`}/>
+           {errors.question  ? <p className="error-text">{errors.question.message}</p>   : questionError  ? <p className="error-text">{questionError}</p>  : <p className="error-ghost">No Error</p>}
+
+
             <button className="btn-cta" type="submit">Send message</button>
         </form>
       </div>

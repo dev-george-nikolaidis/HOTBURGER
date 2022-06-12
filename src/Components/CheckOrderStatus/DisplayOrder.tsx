@@ -10,7 +10,7 @@ const  DisplayOrder :React.FC = () => {
 
     if (order) {
         const {name,address,city,amount,orderStatus,phone_number,post_code,products,special_instructions} = order;
-        console.log(post_code)
+      
     displayOrder = (
         <div className="container">
             <div className="form">
@@ -36,7 +36,7 @@ const  DisplayOrder :React.FC = () => {
     )
 }
 
-    console.log(order)
+  
 
     
   return (

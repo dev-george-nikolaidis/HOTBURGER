@@ -64,10 +64,17 @@ switch (action.type) {
     }
   );
   case  ActionTypes.FETCH_ORDER:
-    console.log(action.payload)
+    // console.log(action.payload)
     return ({
       ...state,
       order:action.payload
+    }
+  );
+  case  ActionTypes.SET_CURRENT_CATEGORY:
+
+    return ({
+      ...state,
+      currentMenuCategory:action.payload
     }
   );
   // case  ActionTypes.CREATE_USER:

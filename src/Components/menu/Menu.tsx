@@ -2,20 +2,24 @@ import React from 'react';
 import styled from 'styled-components';
 import Footer from '../layout/Footer';
 import Navbar from '../layout/Navbar';
-import CartLayout from './CartLayout';
-import MenuCard from './MenuCard';
-import Modal from './modals/Modal';
+import DisplayCurrentMenu from './DisplayCurrentMenu/DisplayCurrentMenu';
+
+import MenuCategories from './MenuCategories';
+// import MenuCard from './MenuCard';
+// import Modal from './modals/Modal';
 
 const  Menu :React.FC = () => {
 
   return (
 <Wrapper>
     <Navbar/>
-    <MenuCard />
-    <Modal/>
+      <div className="menu-container">
+          <MenuCategories/>
+          <DisplayCurrentMenu/>
+      </div>
     <Footer/>
 </Wrapper>
-);
+);  
 };
 
 export default Menu;
@@ -31,5 +35,14 @@ const Wrapper = styled.section`
   position: relative;
   
   
-
+  .menu-container{
+   grid-column: 2 / 14;
+   width: 100%;
+   margin-bottom: 5rem;
+   background-color:var(--clr-background-menu);
+   border-radius: 5px;
+    color:var(--clr-text-1);
+    display:grid;
+    grid-template-columns: 30rem 1fr;
+  }
 `

@@ -2,16 +2,21 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup'
-import {oderIdSchema} from '../../util/helpers';
+import {getRandomNumberBetween, oderIdSchema} from '../../util/helpers';
 import { AiFillCloseCircle } from "react-icons/ai";
 import { useHotburgerContext } from '../../context/hotburger/HotburgerContext';
 import { ActionTypes } from '../../context/Constants';
+
+
 type UserSubmitForm  = { 
   orderId:string,
+  question:string,
 }
 
 
-  
+const value1 =getRandomNumberBetween(1,5)
+const value2 =getRandomNumberBetween(1,5)
+const total = value1 + value2
 
 const  OrderStatusForm :React.FC = () => {
     const [errorMessage,setErrorMessage] = useState("");
@@ -32,6 +37,11 @@ const  OrderStatusForm :React.FC = () => {
       
       
       const onSubmit = (formData: UserSubmitForm) => {
+        if (+formData.question != total) {
+          setErrorMessage("Answer is incorrect, please try again")
+          return;
+        }
+
        const {orderId} = formData
         const fetchOrder = async()=>{
           
@@ -46,15 +56,16 @@ const  OrderStatusForm :React.FC = () => {
             }
               try {
 
-                const res = await fetch("http://localhost:1340/api/check-order-status",request)
+                const res = await fetch("https://hotburger-app.herokuapp.com/api/check-order-status",request)
                 const data = await res.json();
               
                 if (data) {
                  
                     if (data.data === null) {
                         setErrorMessage("No order data found, please try again.")
+                        return;
                     }
-                  console.log(data)
+                  // console.log(data)
 
                   dispatch({type:ActionTypes.FETCH_ORDER ,payload:data})
 
@@ -89,6 +100,12 @@ const  OrderStatusForm :React.FC = () => {
            <label htmlFor="Order Id">Order ID*</label>
            <input type="text"  {...register('orderId')}  className={`form-control ${errors.orderId ? 'is-invalid' : ''}`}  />
            {errors.orderId  ? <p className="error-text">{errors.orderId.message}</p>   :  <p className="error-ghost">No Error</p>}  
+
+           <label htmlFor="question">What is {value1} + {value2}?*</label>
+           <input  type="text"  {...register('question')}  className={`form-control ${errors.question ? 'is-invalid' : ''}`}/>
+            {errors.question  ? <p className="error-text">{errors.question.message}</p>   : errorMessage  ? <p className="error-text">{errorMessage}</p>  : <p className="error-ghost">No Error</p>}
+            
+
             <button className="btn-cta" type="submit">Find order</button>
         </form>
 </Wrapper>

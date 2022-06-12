@@ -14,7 +14,7 @@ const  SignUp :React.FC<Props> =  () => {
       e.preventDefault();
       console.log("from has been submitted!")
 
-    const res = await  fetch("http://localhost:1340/api/auth/local/register",{
+    const res = await  fetch("https://hotburger-app.herokuapp.com/api/auth/local/register",{
         method: "POST",
         headers: {
           'Content-Type': 'application/json'
