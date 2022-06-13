@@ -3,10 +3,9 @@ import React from 'react';
 import styled from 'styled-components';
 import ProductPageLayout, { QueryProps } from '../ProductPageLayout';
 
-
 const query = graphql`
   {
-    allStrapiMenu(filter: {category: {eq: "turkey-burger"}}) {
+    allStrapiMenu(filter: {category: {eq: "kid-menu"}}) {
       nodes {
         title
         slug
@@ -28,19 +27,18 @@ const query = graphql`
   }
 `
 
-const  TurkeyBurgersMenu :React.FC = () => {
-  const queryData:QueryProps = useStaticQuery(query)
-  const description = "Forget everything you know about turkey burgers. Done? Order one of our Smashingly seasoned turkey burgers packed with flavor, sizzled to order, and prepared with fresh produce on a toasted bun. Turkey burgers just got a makeover! Don’t forget to make it a double for good measure."
-
-
+const  KidsMenu :React.FC = () => {
+    const queryData:QueryProps = useStaticQuery(query)
+    const description = "Kids deserve a menu of their own, which is why we whip up kid-friendly options to please even the pickiest eaters. Served with regular French fries and their choice of regular fountain drink, organic milk or juice."
+  
   return (
 <Wrapper>
-  <ProductPageLayout queryData={queryData} sectionTitle={"Turkey Burgers"} sectionDescription={description}/>
+<ProductPageLayout queryData={queryData} sectionTitle={"Kids Meals"} sectionDescription={description}/>
 </Wrapper>
 );
 };
 
-export default TurkeyBurgersMenu;
+export default KidsMenu;
 
 
 const Wrapper = styled.div``

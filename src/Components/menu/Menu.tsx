@@ -3,16 +3,17 @@ import styled from 'styled-components';
 import Footer from '../layout/Footer';
 import Navbar from '../layout/Navbar';
 import DisplayCurrentMenu from './DisplayCurrentMenu/DisplayCurrentMenu';
-
 import MenuCategories from './MenuCategories';
+import Modal from './modals/Modal';
+
 // import MenuCard from './MenuCard';
-// import Modal from './modals/Modal';
 
 const  Menu :React.FC = () => {
 
   return (
 <Wrapper>
     <Navbar/>
+      <Modal/>
       <div className="menu-container">
           <MenuCategories/>
           <DisplayCurrentMenu/>

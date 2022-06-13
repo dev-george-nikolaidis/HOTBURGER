@@ -85,7 +85,7 @@ const Wrapper = styled.div`
     .product-img{
         width: 20rem;
         height: 10rem;
-        border: 2px solid rgba(0,0,0,0.5);
+        /* border: 2px solid rgba(0,0,0,0.5); */
         border-radius:10px;
       
     }
