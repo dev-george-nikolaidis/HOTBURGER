@@ -4,7 +4,7 @@ import Footer from '../layout/Footer';
 import Navbar from '../layout/Navbar';
 import DisplayCurrentMenu from './DisplayCurrentMenu/DisplayCurrentMenu';
 import MenuCategories from './MenuCategories';
-import Modal from './modals/Modal';
+import Modal from './DisplayCurrentMenu/modals/Modal';
 
 // import MenuCard from './MenuCard';
 

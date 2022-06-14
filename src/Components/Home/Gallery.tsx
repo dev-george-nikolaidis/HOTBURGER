@@ -63,8 +63,10 @@ const  Gallery :React.FC = () => {
   
       return(
         <div key={index}  className="wrapper">
+          <div className="img-container">
           {/* @ts-ignore */}
             <GatsbyImage  image={image.gallery_image.localFile.childImageSharp.gatsbyImageData} alt="x" className='gallery-image'/>
+          </div>
         </div>
       )
   })
@@ -89,7 +91,8 @@ const Wrapper = styled.section`
   
   .gallery-container{
     display:  grid;
-    grid-template-columns: repeat(3,1fr);
+    /* grid-auto-flow: column; */
+    grid-template-columns: repeat(4,1fr);
     grid-gap: 4rem;
     
   
@@ -97,16 +100,26 @@ const Wrapper = styled.section`
   }
   .wrapper{
     width: 100%;
-    min-height:30rem;
-    border: 5px solid var(--clr-primary-1);
+    min-height:20rem;
+    /* border: 5px solid var(--clr-primary-1); */
     border-radius: 1rem;
   }
 
-
-  .gallery-image{
+  .img-container{
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+
+  }
+  .gallery-image{
     object-fit: cover;
+    transition: var(--transition);
+
+    &:hover{
+      transform: scale(1.5);
+    }
   }
 
 

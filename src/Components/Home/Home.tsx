@@ -45,8 +45,12 @@ const Wrapper = styled.section`
   }
  
     
-  
-  
+  @media only screen and (max-width:75em) {
+    .grid-container{
+      grid-template-columns: [full-start] minmax(4rem ,auto)  [col-start] repeat(12, minmax(min-content, 12rem)) minmax(4rem ,auto) [full-end];
+      grid-column-gap: 3rem;
+    }
+  }
 
  
 `

@@ -205,11 +205,13 @@ const Wrapper = styled.section`
  .title-container{
   display: flex;
   justify-content:space-between;
-  align-items: center;
+  
+  
  }
 
  .product-image-container{
-  text-align: center;
+  display: flex;
+  justify-content:center;
  }
 
  .product-image{
@@ -236,6 +238,7 @@ const Wrapper = styled.section`
 
 .price{
   font-size: 2rem;
+  margin-left: 1rem;
 }
 
 .description{

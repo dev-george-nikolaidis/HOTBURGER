@@ -30,16 +30,17 @@ const  DisplayProducts :React.FC = () => {
           
             return (
                 <div key={index} className="product-container"  >
-                
-                    < img  src={product.image} alt={product.title} className="product-img"/>
-                 
+                    <div className="img-container">
+
+                        < img  src={product.image} alt={product.title} className="product-img"/>
+                    </div>
                     <div className="text-container">
                         <div className="title-price-container">
                             <h3>{product.title}</h3>
                             <p className="product-price">${product.price} X {product.quantity}</p>
                         </div>
                         {product.temperature && <p className="temperature">Temperature: {product.temperature}</p>}
-                        {product.message && <p className="message">Message: {product.message}</p>}
+                        {product.message ? <p className="message">Message: {product.message}</p>: <p className="message">Message:</p>} 
                         <div className="actions-container">
                             {/* <EditProduct id={product.id}/> */}
                             <RemoveProduct id={product.id} />
@@ -81,14 +82,19 @@ const Wrapper = styled.div`
      }   
     }
 
+   .img-container{
+   
+   } 
 
     .product-img{
         width: 20rem;
         height: 10rem;
+
         /* border: 2px solid rgba(0,0,0,0.5); */
         border-radius:10px;
       
     }
+  
     
     .text-container{
         flex:1;

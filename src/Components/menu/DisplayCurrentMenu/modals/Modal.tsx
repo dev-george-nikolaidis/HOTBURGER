@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ActionTypes, MenuProductCategory } from '../../../context/Constants';
-import { useHotburgerContext } from '../../../context/hotburger/HotburgerContext';
-import MeatBurgerModal from '../DisplayCurrentMenu/BeefBurgersMenu/MeatBurgerModal';
+import { ActionTypes, MenuProductCategory } from '../../../../context/Constants';
+import { useHotburgerContext } from '../../../../context/hotburger/HotburgerContext';
+import MeatBurgerModal from '../BeefBurgersMenu/MeatBurgerModal';
+import ProductPageModal from '../ProductPageModal';
 
 
 
@@ -36,6 +37,14 @@ const  Modal :React.FC = () => {
 <Wrapper>
 
     {menuCategory.toUpperCase() === MenuProductCategory.BEEF_BURGER &&  <MeatBurgerModal   resetClickedItem ={resetClickedItem} />}
+    {menuCategory.toUpperCase() === MenuProductCategory.CHICKEN_BURGER &&  <ProductPageModal   resetClickedItem ={resetClickedItem} />}
+    {menuCategory.toUpperCase() === MenuProductCategory.BEAN_BURGER &&  <ProductPageModal   resetClickedItem ={resetClickedItem} />}
+    {menuCategory.toUpperCase() === MenuProductCategory.BEVERAGES &&  <ProductPageModal   resetClickedItem ={resetClickedItem} />}
+    {menuCategory.toUpperCase() === MenuProductCategory.DESSERT &&  <ProductPageModal   resetClickedItem ={resetClickedItem} />}
+    {menuCategory.toUpperCase() === MenuProductCategory.FRIES &&  <ProductPageModal   resetClickedItem ={resetClickedItem} />}
+    {menuCategory.toUpperCase() === MenuProductCategory.KID_MENU &&  <ProductPageModal   resetClickedItem ={resetClickedItem} />}
+    {menuCategory.toUpperCase() === MenuProductCategory.SALAD &&  <ProductPageModal   resetClickedItem ={resetClickedItem} />}
+    {menuCategory.toUpperCase() === MenuProductCategory.TURKEY_BURGER &&  <ProductPageModal   resetClickedItem ={resetClickedItem} />}
    
 </Wrapper>
 );

@@ -8,7 +8,7 @@ Fonts
 Variables
 ===============
 */
-
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 html {
   /*1rem = 10px */
 
@@ -84,6 +84,9 @@ html {
    --bp-1850: 115.62em;
    --bp-1400: 87.5em;
    /* 1400px / 16px */
+    --bp-1200:75em;
+
+
    --bp-big: 68.75em;
    /* 1100px / 16px */
    --bp-large: 50em;
@@ -176,13 +179,13 @@ img{
   text-transform: uppercase;
   background-color: transparent;
   color: var(--clr-text-1);
-  padding: 1rem 2.18rem;
+  padding: 0.8rem 2rem;
   transition: var(--transition); 
   display: inline-block;
   cursor: pointer;
   border: 2px solid #000;
   border-radius: 1rem; 
-  font-size: 2.1rem;
+  font-size: 1.8rem;
   font-family: var(--ff-primary-3 ) ;
   font-weight: bold;
 }

@@ -44,7 +44,7 @@ const Wrapper = styled.section`
   h1{
     font-size:4.8rem;
     font-weight: bold;
-    font-family: var(--ff-primary-3);
+    font-family: var(--ff-primary-1);
     margin-bottom: 4rem;
     
   }

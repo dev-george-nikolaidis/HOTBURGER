@@ -6,6 +6,8 @@ import BeanBurgersMenu from './BeanBurgersMenu/BeanBurgersMenu';
 import BeefBurgersMenu from './BeefBurgersMenu/BeefBurgersMenu';
 import Beverages from './Beverages/Beverages';
 import ChickenBurgersMenu from './ChickenBurgersMenu/ChickenBurgersMenu';
+import DessertsMenu from './DessertsMunu/DessertsMenu';
+import FriesMenu from './FriesMenu/FriesMenu';
 import KidsMenu from './KidsMenu/KidsMenu';
 import SaladMenu from './SaladMenu/SaladMenu';
 import TurkeyBurgersMenu from './TurkeyBurgersMenu/TurkeyBurgersMenu';
@@ -25,6 +27,8 @@ console.log(currentMenuCategory.toLocaleUpperCase())
     {currentMenuCategory.toUpperCase() === MenuProductCategory.SALAD && <SaladMenu/>}
     {currentMenuCategory.toUpperCase() === MenuProductCategory.KID_MENU && <KidsMenu/>}
     {currentMenuCategory.toUpperCase() === MenuProductCategory.BEVERAGES && <Beverages/>}
+    {currentMenuCategory.toUpperCase() === MenuProductCategory.FRIES && <FriesMenu/>}
+    {currentMenuCategory.toUpperCase() === MenuProductCategory.DESSERT && <DessertsMenu/>}
 </Wrapper>
 );
 };

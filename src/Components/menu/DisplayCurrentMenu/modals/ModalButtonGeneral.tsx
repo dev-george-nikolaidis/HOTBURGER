@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FiMinusCircle ,FiPlusCircle} from "react-icons/fi";
-import { useHotburgerContext } from '../../../context/hotburger/HotburgerContext';
-import { ActionTypes } from '../../../context/Constants';
+import { useHotburgerContext } from '../../../../context/hotburger/HotburgerContext';
+import { ActionTypes } from '../../../../context/Constants';
 import uniqid from 'uniqid';
 
 interface ModalButtonsProps{

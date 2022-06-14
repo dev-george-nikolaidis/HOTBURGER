@@ -1,71 +1,46 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useHotburgerContext } from '../../../../context/hotburger/HotburgerContext';
+import { useHotburgerContext } from '../../../context/hotburger/HotburgerContext';
 import { AiFillCloseCircle } from "react-icons/ai";
-
-import ModalButtons from '../modals/ModalButtons';
-
-
-interface MeatBurgerProps{ 
-  resetClickedItem:any
-
-}
+import ModalButtons from './modals/ModalButtons';
 
 
-
-
-const  MeatBurgerModal :React.FC<MeatBurgerProps> = ({resetClickedItem}) => {
-
-  const {state:{currentItemClicked}} = useHotburgerContext()
-  const {title,imageUrl,description,price} = currentItemClicked;
-
- 
-  const isBrowser = typeof window !== "undefined"
-  if (isBrowser) {
-    document.body.style.overflow = 'hidden';
+interface Props{ 
+    resetClickedItem:any
+  
   }
+  
 
-  const [temperature,setTemperature] = useState<string | null>(null);
-  const [message , setMessage] = useState("");
+const  ProductPageModal :React.FC<Props>  = ({resetClickedItem}) => {
+    const {state:{currentItemClicked}} = useHotburgerContext()
+    const {title,imageUrl,description,price} = currentItemClicked;
+
+    const isBrowser = typeof window !== "undefined"
+    if (isBrowser) {
+      document.body.style.overflow = 'hidden';
+    }
+    
+    const [message , setMessage] = useState("");
 
     
-  const handleRadioClick = (e:React.MouseEvent<HTMLInputElement>) => {
-    
-       setTemperature(e.currentTarget.value)
-  }
 
-  const ratios = ["Rare","Medium Rare","Medium","Medium Well","Well Done"];
-  let displayRatios = ratios.map((ratio,index)=>{
-
-    return(
-        <div key={index}>
-         <div className="radio-container" >
-              <label htmlFor={ratio} >{ratio}</label>
-              <input type="radio" name="input"  value={ratio} onClick={handleRadioClick}/>
-         </div>
-          <hr  />
-        </div>
-    )
-  })
 
   return (
 <Wrapper>
-    <div className="modal-popup"> </div>
+<div className="modal-popup"> </div>
       <div className="model-container">
           <AiFillCloseCircle className="icon-close" onClick={resetClickedItem}/>
+          <div className="image-container">
+
           <img src={imageUrl} alt={title} />
+          </div>
            <div className="title-container">
               <h2>{title}</h2>
               <p className="price">${price}</p>
            </div>
           <p className="description">{description}</p>
-           <hr  />
-           <div className="subtitle-container">
-             <h3>Temperature</h3>
-             <p className="required-text">Required</p>
-           </div>
-            <hr  />
-            {displayRatios}
+         
+         
             <div className="subtitle-container">
             <h3>Special Request</h3>
              <p className="optional-text">Optional</p>
@@ -76,25 +51,23 @@ const  MeatBurgerModal :React.FC<MeatBurgerProps> = ({resetClickedItem}) => {
           title = {title}
           price = {price}
           imageUrl = {imageUrl}
-          temperature = {temperature}
+          temperature = {null}
            message={message} 
            resetClickedItem={resetClickedItem}
          
            />
          
       </div>
-   
 </Wrapper>
 );
 };
 
-export default MeatBurgerModal;
+export default ProductPageModal;
 
 
 const Wrapper = styled.div`
 
-
-  .icon-close{
+.icon-close{
     font-size:3rem;
     position: fixed;
     top: 0rem;
@@ -123,7 +96,9 @@ const Wrapper = styled.div`
   .price{
     font-size: 2.5rem;
   }
-
+  .image-container{
+    /* height: ; */
+  }
   img{
     width: 100%;
     height: 32rem;
@@ -185,4 +160,5 @@ const Wrapper = styled.div`
     margin: 2rem 0 4rem 0;
     resize: none;
   }
+
 `
