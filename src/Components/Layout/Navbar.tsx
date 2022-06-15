@@ -3,8 +3,9 @@ import React from 'react';
 import styled from 'styled-components';
 import "../../assets/css/main.css"
 import Logo from "../../assets/images/logo.svg"
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart ,} from "react-icons/fa";
 import { useHotburgerContext } from '../../context/hotburger/HotburgerContext';
+import { GiHamburgerMenu } from "react-icons/gi";
 
 
 const  Navbar :React.FC = () => {
@@ -16,7 +17,7 @@ const  Navbar :React.FC = () => {
 <Wrapper>
     
         <ul className="flex-container">
-          <li>  
+          <li className="list-logo">  
             <Link to="/"> <img src={Logo} alt="logo of the HOTBURGER" className="logo" /> </Link>
            </li>
             <li>
@@ -41,10 +42,18 @@ const  Navbar :React.FC = () => {
             <li>
               <Link to="/menu" activeStyle={active}>Menu</Link>
             </li>
-    
-            <li>
+
+         
+
+            <li className="list-cart">
               <Link to="/app/cart"  className="cart-container-link">  <FaShoppingCart className="cart-icon" />  <span className="cart-text">{cart.amount}</span> </Link>
             </li>
+             
+            <li className='list-burger'>
+              <GiHamburgerMenu className="burger-menu-icon"/>
+            </li>
+           
+           
         </ul>
   
 </Wrapper>
@@ -69,6 +78,7 @@ const Wrapper = styled.nav`
     justify-content: flex-start;
     align-items: center;
     height: 100%;  
+    
   }
 
  
@@ -94,7 +104,7 @@ const Wrapper = styled.nav`
      margin: 0 0 0 auto;
   }
 
-  li:last-of-type{
+  .list-cart{
     position: relative; 
     transition : var(--transition);
     /* background: red; */
@@ -140,6 +150,56 @@ const Wrapper = styled.nav`
       color: var(--clr-primary-1);
       background-color:#fff;
     }
+  }
+
+   .list-burger{
+    display: none;
+   }
+    .burger-menu-icon{
+  
+      font-size: 3.5rem;
+ 
+    }
+
+    /* 1024px */
+    @media only screen and (max-width:64em) {
+
+      .flex-container{
+      
+      
+      }
+     li{
+      display: none;
+     }
+   
+   ul .list-burger{
+    display:inline-block;
+    
+    }
+     .list-logo{
+      display:inline-block;
+     }
+
+   ul  .list-cart{
+      display: inline-block;
+      margin: 0 0 0 auto;
+     }
+  }
+
+    /* 480px -  320px  */
+    @media only screen and (max-width:30em) {
+     
+        .logo{
+          width: 15rem;
+        }
+        .burger-menu-icon{
+        font-size: 2.5rem;
+      }
+
+      .cart-icon{
+    font-size:2.5rem;
+      }
+
   }
 
 `

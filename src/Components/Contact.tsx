@@ -94,13 +94,13 @@ const  Contact :React.FC = () => {
     
        {response.success && <ContactSuccess message={response.message}/>}
      
-      <h2 className="section-title">Contacts us</h2>
+     
       <div className="container">
   
         <div className="modal"></div>
         <StaticImage src="../assets/images/contact-background.png" alt="" className="background-image" />
         <form onSubmit={handleSubmit(onSubmit)} className="form">
-          
+           <h2 className="section-title">Contacts us</h2>
            <label htmlFor="Name">Name*</label>
            <input type="text"  {...register('name')}  className={`form-control ${errors.name ? 'is-invalid' : ''}`}  />
            {errors.name  ? <p className="error-text">{errors.name.message}</p>   :  <p className="error-ghost">No Error</p>}  
@@ -215,4 +215,24 @@ position: relative;
   .section-title{
     margin: 1rem;
   }
+
+
+  @media only screen and (max-width:48em) {
+    .section-title{
+      padding-bottom: 2rem;
+    }
+  }
+
+
+    /* 480px -  320px  */
+    @media only screen and (max-width:30em) {
+      .form{
+    min-height: 50rem;
+    width: 25rem;   
+   }
+
+  }
+
+  
+
 `

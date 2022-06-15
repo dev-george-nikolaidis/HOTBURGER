@@ -44,13 +44,23 @@ const Wrapper = styled.section`
 
   }
  
-    
+    /* 1200px */
   @media only screen and (max-width:75em) {
     .grid-container{
       grid-template-columns: [full-start] minmax(4rem ,auto)  [col-start] repeat(12, minmax(min-content, 12rem)) minmax(4rem ,auto) [full-end];
       grid-column-gap: 3rem;
     }
   }
+
+/* 768px */
+  @media only screen and (max-width:48em) {
+    .grid-container{
+      grid-template-columns: [full-start] minmax(1rem ,auto)  [col-start] repeat(12, minmax(min-content, 12rem)) minmax(1rem ,auto) [full-end];
+      grid-column-gap: 1rem;
+    }
+  }
+
+
 
  
 `

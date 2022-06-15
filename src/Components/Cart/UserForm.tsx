@@ -233,4 +233,20 @@ const  UserForm :React.FC = () => {
     opacity: 0;
   
   }
+
+  /* 480px -  320px  */
+@media only screen and (max-width:30em) {
+  form{
+    padding: 1rem ;
+    
+  }
+  h2{
+    font-size: 1.8rem;
+  }
+  h3{
+    font-size: 1.8rem;
+  }
+}
+
+
 `

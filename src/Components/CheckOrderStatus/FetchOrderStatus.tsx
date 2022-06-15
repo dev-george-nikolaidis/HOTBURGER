@@ -26,11 +26,21 @@ const Wrapper = styled.div`
     color:var(--clr-title-2); 
      grid-column: 5/11;
      border-radius: 5px;
-     min-height: 50vh;
+     min-height: 60vh;
    
 
-
+      /* 1200px - 1025px */
+      @media only screen and (max-width:75em) {
+        grid-column: 3/13;
+    }
    
+
+      /* 768px */
+      @media only screen and (max-width:48em) {
+        grid-column: 2/14;
+    }
+
+
 
     
 `

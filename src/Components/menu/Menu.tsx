@@ -46,4 +46,34 @@ const Wrapper = styled.section`
     display:grid;
     grid-template-columns: 30rem 1fr;
   }
+
+        /* 1200px-1025  */
+        @media only screen and (max-width:75em) {
+  
+        grid-template-columns: [full-start] minmax(4rem ,auto)  [col-start] repeat(12, minmax(min-content, 12rem)) minmax(4rem ,auto) [full-end];
+        grid-column-gap: 3rem;
+      
+    }
+    
+      /* 1024px - 769px  */
+    @media only screen and (max-width:64em) {
+      grid-template-columns: [full-start] minmax(1rem ,auto)  [col-start] repeat(12, minmax(min-content, 12rem)) minmax(1rem ,auto) [full-end];
+        grid-column-gap: 1rem;
+
+        .menu-container{
+          grid-template-columns: 1fr;    
+        }
+    }
+
+
+  /* 768px  - 481*/
+    @media only screen and (max-width:48em) {
+   
+    }
+
+    @media only screen and (max-width:30em) {
+      .menu-container{
+        width: 100%;
+        }
+  }
 `

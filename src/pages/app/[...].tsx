@@ -7,7 +7,7 @@ import Login from '../../components/auth/Login';
 import SignUp from '../../components/auth/SignUp';
 import CheckoutSuccess from '../../components/CheckoutSuccess';
 import { useHotburgerContext } from '../../context/hotburger/HotburgerContext';
-import OrderStatus from '../../components/CheckOrderStatus/OrderStatus';
+import CheckOrderStatus from '../../components/CheckOrderStatus/CheckOrderStatus';
 
 
 
@@ -23,7 +23,7 @@ const App: React.FC = () => {
         <Cart path="/cart" />
         {/* <Login path="/login" /> */}
         {/* <SignUp path="/sign-up" /> */}
-        <OrderStatus path="/check-order" />
+        <CheckOrderStatus path="/check-order" />
         <CheckoutSuccess path="/checkout-success/:session_id" />
         <NotFoundPage path="*" />
       </MyRouter>

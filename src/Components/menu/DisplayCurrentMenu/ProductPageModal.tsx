@@ -66,7 +66,8 @@ export default ProductPageModal;
 
 
 const Wrapper = styled.div`
-
+  /* width: 100%; */
+  
 .icon-close{
     font-size:3rem;
     position: fixed;
@@ -139,20 +140,7 @@ const Wrapper = styled.div`
     }
   }
 
-  .radio-container{
-    display: flex;
-    justify-content:space-between;
-    align-items:center;
 
-    label{
-      font-size:1.6rem;
-    }
-
-    input{
-      width: 2rem;
-      height: 2rem;
-    }
-  }
 
   textarea{
     width: 100%;
@@ -161,4 +149,62 @@ const Wrapper = styled.div`
     resize: none;
   }
 
+
+       /* 1024px - 769px  */
+       @media only screen and (max-width:64em) {
+
+
+       }
+
+      /*768px - 481px */
+      @media only screen and (max-width:48em) {
+        h2{
+     
+        font-size: 2rem;
+          
+      }
+          .price{
+        font-size: 2rem;
+      }
+
+      .description{
+        font-size:1.8rem;
+     
+        margin: 2rem 0;
+      }
+
+        img{
+
+      height: 24rem;
+    }
+    
+      }
+
+
+  /* 480px -  320px  */
+  @media only screen and (max-width:30em) {
+    h2{
+        font-size: 1.6rem;
+      }
+          .price{
+        font-size: 1.8rem;
+      }
+
+      .description{
+        font-size:1.4rem;
+     
+        margin: 2rem 0;
+      }
+
+        img{
+      height: 14rem;
+       }
+       h3{
+        font-size:1rem;
+       }
+      .model-container{
+        width: 90%;
+        padding:2rem 0.4rem;
+      }
+    }
 `

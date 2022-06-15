@@ -64,7 +64,7 @@ const Wrapper = styled.div`
 
   .card-container{
     padding:2.5rem;
-    min-height:100%;
+    height:100%;
   }
 
 
@@ -88,4 +88,19 @@ const Wrapper = styled.div`
       letter-spacing: 0.2rem;
   }
   
+
+     /* 480px -  320px  */
+     @media only screen and (max-width:30em) {
+        width: 100%;
+      
+    .card-container{
+      padding:1rem;
+     
+      } 
+      p{
+      font-size: 1.6rem;
+      font-family: var(--ff-primary-2);
+      letter-spacing: 0.2rem;
+  }
+    }
 `

@@ -246,4 +246,17 @@ const Wrapper = styled.section`
 }
 button{
   margin-bottom:1rem;
-}`
+}
+
+  /* 480px -  320px  */
+  @media only screen and (max-width:30em) {
+      .burgers-container{
+    
+    grid-gap: 2rem;
+    grid-template-columns: 1fr;   
+    margin: 0 0.2rem;
+  }
+}
+
+
+`

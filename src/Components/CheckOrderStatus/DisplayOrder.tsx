@@ -10,11 +10,14 @@ const  DisplayOrder :React.FC = () => {
 
     if (order) {
         const {name,address,city,amount,orderStatus,phone_number,post_code,products,special_instructions} = order;
-      
+       
     displayOrder = (
         <div className="container">
             <div className="form">
-               <ProgressBar/>
+                <div className="progressbar">
+                <ProgressBar />
+                </div>
+                <p className="order-status">Order Status:<span className="order-text"> Preparation</span></p>
                  <h2>Delivery information</h2>
                 <label htmlFor="Name">Name</label>
                 <input type="text"  value={name}  readOnly={true}/>
@@ -51,10 +54,10 @@ export default DisplayOrder;
 
 const Wrapper = styled.section`
    position: relative;
-
+ 
     .form{
     padding: 4rem;
-   
+      
     }
     
   h2{
@@ -89,6 +92,37 @@ const Wrapper = styled.section`
     font-size: 2.5rem;
     margin: 3rem 0 1rem 0;
   }
+
+  .order-status{
+    display: none;
+  }
+
+    /* 480px -  320px  */
+  @media only screen and (max-width:30em) {
+    .form{
+      padding: 1rem;
+    }
+
+    .progressbar{
+      display: none;
+    }
+
+    
+  .order-status{
+    display: block;
+    text-transform: uppercase;
+    font-size:1.5rem;
+  }
+  h2{
+    margin: 2rem 0 2rem 0;
+   
+  }
+  .order-text{
+    background-color:var(--clr-primary-1);
+    font-weight:bold;
+  }
+  }
+
 
  
 `

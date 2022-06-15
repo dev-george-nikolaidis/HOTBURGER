@@ -185,4 +185,53 @@ const Wrapper = styled.div`
     margin: 2rem 0 4rem 0;
     resize: none;
   }
+
+        /*768px - 481px */
+        @media only screen and (max-width:48em) {
+        h2{
+        font-size: 2rem;
+      }
+          .price{
+        font-size: 2rem;
+      }
+
+      .description{
+        font-size:1.8rem;
+     
+        margin: 2rem 0;
+      }
+
+        img{
+      height: 24rem;
+       }
+    
+      }
+
+      
+      /* 480px -  320px  */
+    @media only screen and (max-width:30em) {
+      h2{
+        font-size: 1.6rem;
+      }
+          .price{
+        font-size: 1.8rem;
+      }
+
+      .description{
+        font-size:1.4rem;
+     
+        margin: 2rem 0;
+      }
+
+        img{
+      height: 14rem;
+       }
+       h3{
+        font-size:1rem;
+       }
+      .model-container{
+        width: 90%;
+        padding:2rem 0.4rem;
+      }
+    }
 `

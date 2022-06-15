@@ -155,5 +155,38 @@ const Wrapper = styled.div`
     }
   }
 
+
+
+  @media only screen and (max-width:75em) {
+    .container{
+
+    grid-template-columns:1fr;
+    justify-items: center;
+    grid-gap: 4rem;
+  }
+  }
+
+  
+  @media only screen and (max-width:48em) {
+    
+    .reviews{
+      
+    }
+    h5{
+   
+    font-size:1.7rem;
+    margin:0 1rem;
+  }
+  
+  }
+    /* 480px -  320px  */
+    @media only screen and (max-width:30em) {
+      h2{
+        font-size: 1.6rem;
+      }
+      h5{
+        font-size:1.4rem;
+  }
+    }
  
 `

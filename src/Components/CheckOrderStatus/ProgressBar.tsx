@@ -29,10 +29,12 @@ export default ProgressBar;
 
 const Wrapper = styled.div`
     /* margin: 10rem 0; */
+  
     .margin-area {
         position:relative;
         text-align: center;
         margin: 0 8rem;
+  
     
     }
 
@@ -47,7 +49,7 @@ const Wrapper = styled.div`
         line-height:3rem;
         z-index: 5;
         /* background: #0C84D9; */
-       
+     
     }
     .one{
         left:0%;
@@ -120,5 +122,137 @@ const Wrapper = styled.div`
   }
 
 
+     /* 1200px */
+     @media only screen and (max-width:75em) {
+      .message{
+        width:13rem;
+       }
+    }
+    /* 1024 - 769 */
+     @media only screen and (max-width:64em) {
+      .message{
+        width:11rem;
+       }
+    }
+   
+      /* 768px -481 */
+      @media only screen and (max-width:48em) {
+     
+
+       .one{
+        left:-20%;
+        background: #0C84D9;
+    }
+
+    .two{
+        left:23%;
+        background: #0C84D9;
+    }
+
+    .three{
+        left:66%;
+        background: #bbb;
+     
+    }
+    .four{
+        left:110%;
+        background: #bbb;
+         
+    }
+
+      .first {
+        background: #0C84D9;
+        width:45%;
+        left:-18%;
+      }
+      .second {
+        left: 28%;
+        width:45%;
+      }
+      .third {
+        left: 68%;
+        width:45%;
+      }
+
+          .message{
+
+    font-size:1.3rem;
+    }
+      .message-1{
+    left: -25%;
+  }
+  .message-2{
+    left: 15%;
+  }
+  .message-3{
+    left: 60%;
+  }
+
+
+  .message-4{
+    right: -25%;
+  }
+    }
+
+
+
+       /* 600px -481 */
+       @media only screen and (max-width:37.5em) {
+     
+
+     .one{
+      left:-40%;
+      background: #0C84D9;
+  }
+
+  .two{
+      left:13%;
+      background: #0C84D9;
+  }
+
+  .three{
+      left:66%;
+      background: #bbb;
+   
+  }
+  .four{
+      left:130%;
+      background: #bbb;
+       
+  }
+
+    .first {
+      background: #0C84D9;
+      width:45%;
+      left:-28%;
+    }
+    .second {
+      left: 25%;
+      width:45%;
+    }
+    .third {
+      left: 68%;
+      width:70%;
+    }
+
+        .message{
+
+  font-size:1.3rem;
+  }
+    .message-1{
+  left: -55%;
+}
+.message-2{
+  left: -5%;
+}
+.message-3{
+  left: 50%;
+}
+
+
+.message-4{
+  right: -60%;
+}
+  }
 
 `

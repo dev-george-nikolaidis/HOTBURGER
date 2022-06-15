@@ -129,4 +129,23 @@ const Wrapper = styled.section`
     text-align: center;
   
   }
+
+
+  @media only screen and (max-width:48em) {
+    .gallery-container{
+
+    
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 1rem;
+     }
+  }
+
+
+      /* 480px -  320px  */
+      @media only screen and (max-width:30em) {
+      h2{
+        font-size: 1.6rem;
+      }
+   
+    }
 `

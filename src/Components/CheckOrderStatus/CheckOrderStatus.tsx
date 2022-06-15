@@ -1,39 +1,31 @@
-import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
-
+import FetchOrderStatus from './FetchOrderStatus';
 import Footer from '../layout/Footer';
 import Navbar from '../layout/Navbar';
-import CartProducts from './CartProducts';
-import UserForm from './UserForm';
-
-
 
 interface Props {
     path: string;
-    
-}
+  }
+  
+const  CheckOrderStatus :React.FC<Props> = () => {
 
-
-
-const  Cart :React.FC<Props> = () => {
- 
   return (
 <Wrapper>
     <div className="grid-container">
         <Navbar/>
-        <CartProducts/>
+          <FetchOrderStatus/>
         <Footer/>
     </div>
 </Wrapper>
 );
 };
 
-export default Cart;
+export default CheckOrderStatus;
 
 
 const Wrapper = styled.section`
-      background-color:var(--clr-background-1);
+    background-color:var(--clr-background-1);
      color:var(--clr-title-1); 
     
      .grid-container{
@@ -44,7 +36,9 @@ const Wrapper = styled.section`
        
      }
 
-           /* 1200px-1025  */
+
+      
+      /* 1200px-1025  */
     @media only screen and (max-width:75em) {
       .grid-container{
         grid-template-columns: [full-start] minmax(4rem ,auto)  [col-start] repeat(12, minmax(min-content, 12rem)) minmax(4rem ,auto) [full-end];
@@ -52,7 +46,7 @@ const Wrapper = styled.section`
       }
     }
     
-      /* 12024px - 769px  */
+      /* 1024px - 769px  */
     @media only screen and (max-width:64em) {
     
     }
@@ -66,5 +60,8 @@ const Wrapper = styled.section`
       }
     }
 
+
+    
+  
 
 `

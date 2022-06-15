@@ -34,6 +34,9 @@ const Wrapper = styled.section`
     min-height: 70rem;
     display: block;
   }
+  .section-title{
+    margin: 4rem 0;
+  }
 
   .text-container{
     position: absolute;
@@ -59,5 +62,31 @@ const Wrapper = styled.section`
 
   span:nth-of-type(2){
     color: var( --clr-primary-1)
+  }
+
+
+
+  @media only screen and (max-width:75em) {
+    .text-container{
+      width: 100%;
+      padding:  0 4rem;
+    }
+  }
+
+  @media only screen and (max-width:48em) {
+    p{
+      font-size:2rem;
+    }
+  }
+
+    /* 480px -  320px  */
+    @media only screen and (max-width:30em) {
+      .text-container{
+      width: 100%;
+      padding:  0 2rem;
+    }
+      p{
+      font-size:1.7rem;
+    }
   }
 `

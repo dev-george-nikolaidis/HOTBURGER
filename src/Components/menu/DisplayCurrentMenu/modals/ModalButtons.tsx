@@ -139,4 +139,21 @@ button{
     background-color: #8b8b8b;
     pointer-events: none;
 }
+
+
+  /* 480px -  320px  */
+  @media only screen and (max-width:30em) {
+    .icons{
+    font-size:3.5rem;    
+    }
+
+    .btn-cta{
+        font-size:1.6rem;
+
+    }
+
+    h3{
+        font-size:2.5rem;  
+    }
+}
 `

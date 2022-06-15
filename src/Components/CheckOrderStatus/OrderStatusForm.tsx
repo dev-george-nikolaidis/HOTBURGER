@@ -116,7 +116,7 @@ export default OrderStatusForm;
 
 
 const Wrapper = styled.div`
-
+  width: 100%;
 label{
       display: block;
     font-family: var(--ff-primary-2);
@@ -138,6 +138,7 @@ label{
     left: 50%;
     transform: translate( -50%, -50%);
     width: 60%;
+    /* padding-top: 10rem; */
     }
 
     button{
@@ -166,11 +167,30 @@ label{
 
   .error-container{
     text-align: center;
-
+  
 
   }
 .error-message{
     font-size: 1.7rem;
 }
+
+    /* 480px -  320px  */
+    @media only screen and (max-width:30em) {
+      .error-message{
+    font-size: 1.5rem;
+    }
+    .form{
+        
+        padding-top: 6rem;
+        width: 80%;
+        /* padding-top: 10rem; */
+        }
+
+        .icon-error{
+        margin-top: 2rem;
+        font-size: 6rem;
+        
+      }
+    }
 
 `

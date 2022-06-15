@@ -31,7 +31,6 @@ const  DisplayProducts :React.FC = () => {
             return (
                 <div key={index} className="product-container"  >
                     <div className="img-container">
-
                         < img  src={product.image} alt={product.title} className="product-img"/>
                     </div>
                     <div className="text-container">
@@ -109,6 +108,7 @@ const Wrapper = styled.div`
     .title-price-container{
         display: flex;
         justify-content:space-between;
+     
         /* background-color:yellow; */
     }
 
@@ -116,7 +116,7 @@ const Wrapper = styled.div`
         font-size:1.6rem;
     }
     .message{
-        width: 30rem;
+        max-width: 30rem;
         overflow: hidden;
         white-space: nowrap;
          text-overflow: ellipsis;
@@ -129,6 +129,51 @@ const Wrapper = styled.div`
         
     }
     .product-price{
+  
         font-size:1.6rem;
+    }
+
+
+ /*768px - 481px */
+ @media only screen and (max-width:48em) {
+
+
+    .product-container{
+        display: flex;
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+
+    .img-container{
+        text-align: center;
+    }
+    .title-price-container{
+   
+    }
+    
+    h3{
+        font-size:1.6rem;
+    }
+    .product-price{
+        margin: 0.5rem 0;
+    }
+
+    .message{
+        margin: 0.5rem 0;
+    }
+}
+
+
+  /* 480px -  320px  */
+  @media only screen and (max-width:30em) {
+    .message{
+        max-width: 10rem;
+    }
+
+    .title-price-container{
+      display:block;
+     
+        /* background-color:yellow; */
+    }
     }
 `

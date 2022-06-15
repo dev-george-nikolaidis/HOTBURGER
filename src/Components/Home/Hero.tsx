@@ -50,6 +50,7 @@ const Wrapper = styled.section`
   }
 
   .container{
+ 
     position: absolute;
     text-align: center;
     top: 40%;
@@ -58,4 +59,30 @@ const Wrapper = styled.section`
     z-index: 2;
   }
 
+
+
+  @media only screen and (max-width:64em) {
+    h1{
+    font-size:3rem;
+  
+  }
+
+  .container{
+    width: 100%;
+    padding: 0 4rem;
+  }
+  
+  }
+
+  @media only screen and (max-width:48em) {
+    h1{
+    font-size:2.5rem;
+  }
+  .hero-image{
+    min-height: 60rem;
+  }
+  
+  }
+
+ 
 `

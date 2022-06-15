@@ -243,3 +243,31 @@ img{
   right: 0;
   bottom: 0;
 }
+
+  
+/* 1400px */
+@media only screen and (max-width:87.5em) {
+
+
+}
+    /* 1200px - 1025px */
+    @media only screen and (max-width:75em) {
+    
+  }
+
+
+  /* 1024px - 769px  */
+  @media only screen and (max-width:64em) {
+
+
+  }
+
+ /*768px - 481px */
+ @media only screen and (max-width:48em) {
+   
+ }
+
+  /* 480px -  320px  */
+  @media only screen and (max-width:30em) {
+
+    }

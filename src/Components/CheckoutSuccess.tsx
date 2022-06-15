@@ -148,4 +148,12 @@ const Wrapper = styled.section`
       color:var(--clr-success);
     }
   }
+
+
+  /* 480px -  320px  */
+@media only screen and (max-width:30em) {
+  .modal-container{
+    width: 100%;
+  }
+}
 `

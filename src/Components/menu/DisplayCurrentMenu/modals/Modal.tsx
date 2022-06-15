@@ -86,4 +86,32 @@ const Wrapper = styled.div`
    
   }
 
+/* 1400px */
+  @media only screen and (max-width:87.5em) {
+        .model-container{
+      width: 60%;
+    }
+  }
+
+
+      /* 1200px - 1025px */
+      @media only screen and (max-width:75em) {
+   
+  }
+
+
+  /* 1024px - 769px  */
+  @media only screen and (max-width:64em) {
+    .model-container{
+      width: 80%;
+    }
+
+  }
+
+ /*768px - 481px */
+ @media only screen and (max-width:48em) {
+  .model-container{
+    width: 90%;
+    }
+ }
 `
