@@ -6,6 +6,7 @@ import Logo from "../../assets/images/logo.svg"
 import { FaShoppingCart ,} from "react-icons/fa";
 import { useHotburgerContext } from '../../context/hotburger/HotburgerContext';
 import { GiHamburgerMenu } from "react-icons/gi";
+import Menu from './Menu';
 
 
 const  Navbar :React.FC = () => {
@@ -50,7 +51,8 @@ const  Navbar :React.FC = () => {
             </li>
              
             <li className='list-burger'>
-              <GiHamburgerMenu className="burger-menu-icon"/>
+              {/* <GiHamburgerMenu className="burger-menu-icon"/> */}
+              <Menu/>
             </li>
            
            

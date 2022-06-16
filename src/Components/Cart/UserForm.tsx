@@ -242,6 +242,7 @@ const  UserForm :React.FC = () => {
   }
   h2{
     font-size: 1.8rem;
+    padding-left:1rem;
   }
   h3{
     font-size: 1.8rem;
