@@ -7,6 +7,7 @@ import { validationSchema } from '../../util/helpers';
 import { ActionTypes } from '../../context/Constants';
 import {useNavigate } from "@reach/router";
 import uniqid from 'uniqid';
+import SEO from '../layout/Seo';
 
 
 
@@ -103,7 +104,7 @@ const  UserForm :React.FC = () => {
 
  return (
   <Wrapper>
-    
+    <SEO title="Checkout" description="In checkout page you must fill the following inputs to proceed in purchase process."/>
     <h2>Delivery information</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
       <div className="form-column">

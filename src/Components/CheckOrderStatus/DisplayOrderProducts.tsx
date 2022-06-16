@@ -18,7 +18,7 @@ const  DisplayOrderProducts :React.FC = () => {
 
     if (order) {
         displayProducts = order.products.map((product:Product,index:any)=>{
-            console.log(product)
+            // console.log(product)
 
 
             const {id,image,price,quantity,title,message,temperature} = product;

@@ -3,15 +3,17 @@ import styled from 'styled-components';
 import FetchOrderStatus from './FetchOrderStatus';
 import Footer from '../layout/Footer';
 import Navbar from '../layout/Navbar';
+import SEO from '../layout/Seo';
 
 interface Props {
     path: string;
   }
   
 const  CheckOrderStatus :React.FC<Props> = () => {
-
+  const description = "In this page the customer can enter the order id to check the order status."
   return (
 <Wrapper>
+    <SEO title="Order Status" description={description}/>
     <div className="grid-container">
         <Navbar/>
           <FetchOrderStatus/>

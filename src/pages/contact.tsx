@@ -1,13 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import Contact from '../components/Contact';
+import Contact from '../components/Contact/Contact';
 import Footer from '../components/layout/Footer';
 import Navbar from '../components/layout/Navbar';
+import SEO from '../components/layout/Seo';
 
 const  contact :React.FC = () => {
 
+  const description = "Hotburger contact page form,in this page you can contact the hotburger staff simple and fast"
+
   return (
 <Wrapper>
+  <SEO title="Contact"  description={description}/>
   <div className="grid-container">
      <Navbar/>
       <Contact/>

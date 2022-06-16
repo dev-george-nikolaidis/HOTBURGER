@@ -5,6 +5,7 @@ import Navbar from '../layout/Navbar';
 import DisplayCurrentMenu from './DisplayCurrentMenu/DisplayCurrentMenu';
 import MenuCategories from './MenuCategories';
 import Modal from './DisplayCurrentMenu/modals/Modal';
+import SEO from '../layout/Seo';
 
 // import MenuCard from './MenuCard';
 
@@ -12,6 +13,7 @@ const  Menu :React.FC = () => {
 
   return (
 <Wrapper>
+  <SEO title="Menu"/>
     <Navbar/>
       <Modal/>
       <div className="menu-container">

@@ -11,7 +11,7 @@ const  EditProduct :React.FC<Props> = ({id}) => {
     const {dispatch,state:{cart}} = useHotburgerContext()
 
     const handleEditClick = () => {
-        console.log("we will edit the product with id: " ,id)
+        // console.log("we will edit the product with id: " ,id)
         
 
         // const    productToRemove = cart.products.filter((product:any) => product.id === id ) 

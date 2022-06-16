@@ -41,7 +41,7 @@ const  TestimonialCard :React.FC<Props> = ({name,description,image}) => {
 <Wrapper>
         <div className="card-container">
             {/* @ts-ignore */}
-          <GatsbyImage image = {image.localFile.childImageSharp?.gatsbyImageData} alt={name}/>
+          <GatsbyImage image = {image.localFile.childImageSharp?.gatsbyImageData} alt={name} className="testimonial-image"/>
           <h4>{name}</h4>
           <p>{description}</p>
         </div>
@@ -68,10 +68,10 @@ const Wrapper = styled.div`
   }
 
 
-  img{
+  .testimonial-image{
     width: 10rem;
     height: 10rem;
-    border-radius: 100rem;
+    border-radius: 50%;
   }
 
 

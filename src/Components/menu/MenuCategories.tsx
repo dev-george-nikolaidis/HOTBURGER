@@ -83,7 +83,7 @@ const  MenuCategories :React.FC = () => {
         )
     })  
 
-    console.log(currentMenuCategory)
+    // console.log(currentMenuCategory)
     
   return (
 <Wrapper>

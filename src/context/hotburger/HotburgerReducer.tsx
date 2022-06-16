@@ -42,7 +42,7 @@ switch (action.type) {
     }
   });
   case  ActionTypes.REMOVE_ITEM_FROM_CART:
-    console.log(action.payload.id)
+    // console.log(action.payload.id)
     return ({...state,cart:{
       products: state.cart.products.filter((product:any) => product.id != action.payload.id ) ,
         amount : state.cart.amount - 1 ,
@@ -50,14 +50,14 @@ switch (action.type) {
     }
   });
   case  ActionTypes.STORE_SESSION:
-    console.log(action.payload)
+    // console.log(action.payload)
     return ({
       ...state,
       sessionId:action.payload
     }
   );
   case  ActionTypes.CHECKOUT_INDENT:
-    console.log(action.payload)
+    // console.log(action.payload)
     return ({
       ...state,
       checkout:action.payload

@@ -110,7 +110,7 @@ const  ProductPageLayout :React.FC<Props> = ({queryData, sectionTitle,sectionDes
   }
 
 
-        console.log(currentItemClicked)
+        // console.log(currentItemClicked)
 
     let displayProducts = queryData.allStrapiMenu.nodes.map((product:Product)=>{
       const {id,calories,category,description,menu_image,price,title} = product;
@@ -146,7 +146,7 @@ const  ProductPageLayout :React.FC<Props> = ({queryData, sectionTitle,sectionDes
 <Wrapper>
     <h2>{sectionTitle}</h2>
     <div className="img-container">
-          <StaticImage  src = "../../../../assets/images/line.png" alt="line" className="image-line" />  
+          <StaticImage  src = "../../../assets/images/line.png" alt="line" className="image-line" />  
         </div>
         <p className="sub-title">{sectionDescription}</p>
         <div className="burgers-container">

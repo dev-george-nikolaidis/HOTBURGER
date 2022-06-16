@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Footer from '../layout/Footer';
 import Navbar from '../layout/Navbar';
+import SEO from '../layout/Seo';
 // import Categories from './categories/Categories';
 import Gallery from './Gallery';
 import Hero from './Hero';
@@ -14,6 +15,7 @@ const  Home :React.FC = () => {
 
   return (
 <Wrapper>
+   <SEO title="Home" />
     <div className="grid-container">
         <Navbar/>
           <Hero/>
@@ -43,13 +45,17 @@ const Wrapper = styled.section`
 
 
   }
- 
-    /* 1200px */
-  @media only screen and (max-width:75em) {
-    .grid-container{
+ /* 1400px */
+@media only screen and (max-width:87.5em) {
+  .grid-container{
       grid-template-columns: [full-start] minmax(4rem ,auto)  [col-start] repeat(12, minmax(min-content, 12rem)) minmax(4rem ,auto) [full-end];
       grid-column-gap: 3rem;
     }
+
+}
+    /* 1200px */
+  @media only screen and (max-width:75em) {
+   
   }
 
 /* 768px */

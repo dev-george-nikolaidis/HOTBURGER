@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import Footer from '../layout/Footer';
 import Navbar from '../layout/Navbar';
+import SEO from '../layout/Seo';
 import CartProducts from './CartProducts';
 import UserForm from './UserForm';
 
@@ -17,9 +18,10 @@ interface Props {
 
 
 const  Cart :React.FC<Props> = () => {
- 
+  const description = "This is the cart page, here you can manage your cart products and proceed to purchase the products"
   return (
 <Wrapper>
+    <SEO  title="Cart" description={description}/>
     <div className="grid-container">
         <Navbar/>
         <CartProducts/>

@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
+import SEO from '../../../layout/Seo';
 import ProductPageLayout, { QueryProps } from '../ProductPageLayout';
 
 const query = graphql`
@@ -35,6 +36,7 @@ const  ChickenBurgersMenu :React.FC = () => {
 
   return (
 <Wrapper>
+    <SEO title="Grilled Chicken Burgers" description={description}/>
     <ProductPageLayout queryData={queryData} sectionTitle={"Grilled Chicken Burgers"} sectionDescription={description}/>
 </Wrapper>
 );

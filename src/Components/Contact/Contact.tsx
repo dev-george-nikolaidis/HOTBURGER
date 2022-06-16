@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import {contactFormSchema, getRandomNumberBetween} from "../util/helpers";
+import {contactFormSchema, getRandomNumberBetween} from "../../util/helpers";
 import ContactSuccess from './ContactSuccess';
 
 
@@ -98,7 +98,7 @@ const  Contact :React.FC = () => {
       <div className="container">
   
         <div className="modal"></div>
-        <StaticImage src="../assets/images/contact-background.png" alt="" className="background-image" />
+        <StaticImage src="../../assets/images/contact-background.png" alt="" className="background-image" />
         <form onSubmit={handleSubmit(onSubmit)} className="form">
            <h2 className="section-title">Contacts us</h2>
            <label htmlFor="Name">Name*</label>

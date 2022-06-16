@@ -4,11 +4,13 @@ import styled from 'styled-components';
 
 
 
+
 const  About :React.FC = () => {
 
 
   return (
 <Wrapper id="about">
+ 
       <div className="modal"></div>
       <div className="text-container ">
         <h2 className="section-title">What we do</h2>

@@ -19,7 +19,7 @@ const  ModalButtons :React.FC<ModalButtonsProps> = ({temperature,message,resetCl
     const {state:{menuCategory},dispatch} = useHotburgerContext()
 
     const [quantity, setQuantity] = useState(1);
-    console.log( temperature)
+    // console.log( temperature)
 
     const minusClickHandler =() =>{
          quantity > 1 && setQuantity(quantity - 1) 

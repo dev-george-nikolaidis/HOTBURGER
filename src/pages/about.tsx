@@ -3,11 +3,13 @@ import styled from 'styled-components';
 import About from '../components/About';
 import Footer from '../components/layout/Footer';
 import Navbar from '../components/layout/Navbar';
+import SEO from '../components/layout/Seo';
 
 const  AboutPage :React.FC = () => {
 
   return (
 <Wrapper>
+  <SEO title="About" />
     <div className="grid-container">
      <Navbar/>
       <About/>

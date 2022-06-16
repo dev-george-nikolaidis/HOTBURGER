@@ -5,6 +5,7 @@ import { useHotburgerContext } from '../context/hotburger/HotburgerContext';
 import { navigate } from 'gatsby';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import { FaCheckCircle , FaCopy} from "react-icons/fa";
+import SEO from './layout/Seo';
 
 interface Props {
     path: string;
@@ -46,7 +47,7 @@ const  CheckoutSuccess :React.FC<Props> = ({}) => {
               try {
                 const res = await fetch("https://hotburger-app.herokuapp.com/api/orders/confirm-order",request)
                 const data = await res.json();
-                console.log(data)
+                // console.log(data)
                 setPaid(data.payment);
                 setTotal(data.total)
         } catch (err:any) {
@@ -73,7 +74,7 @@ const  CheckoutSuccess :React.FC<Props> = ({}) => {
    if (paid) {
      let user :any = window.localStorage.getItem('user');
      user =  JSON.parse(user);
-     console.log(user)
+    //  console.log(user)
      displaySuccess = (
         <div className="modal-container">
         
@@ -94,6 +95,7 @@ const  CheckoutSuccess :React.FC<Props> = ({}) => {
  
   return (
 <Wrapper>
+  <SEO title="Checkout Success" description="You successfully purchase the products."/>
      {/* <div className="modal"></div> */}
     {displaySuccess}
     {error && error}

@@ -17,7 +17,7 @@ const {state:{currentMenuCategory}} = useHotburgerContext()
 
 // console.log(currentMenuCategory.toLocaleUpperCase() === MenuProductCategory.BEEF_BURGER)
 
-console.log(currentMenuCategory.toLocaleUpperCase())
+// console.log(currentMenuCategory.toLocaleUpperCase())
   return (
 <Wrapper>
     {currentMenuCategory.toUpperCase() === MenuProductCategory.BEEF_BURGER && <BeefBurgersMenu/>}

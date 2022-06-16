@@ -8,10 +8,27 @@ require('dotenv').config({
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `new`,
-    siteUrl: `https://www.yourdomain.tld`
+    defaultTitle: `HOTBURGER`,
+    description: `HOTBURGER offers burger lovers a better more flavorful burger alternative usually only found in gourmet restaurants but at a fraction of the price. Fast and simple ordering process. Lighting fast delivery.`,
+    titleTemplate :`%s | HOTBURGER`,
+    author: `HOTBURGER`,
+    siteUrl: `https://hotburger-restaurant.netlify.app`,
+    defaultImage:"",
+    twitterUsername:"hotburger-restaurant"
   },
+  
   plugins: [
+    'gatsby-plugin-robots-txt',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://hotburger-restaurant.netlify.app',
+        sitemap: 'https://hotburger-restaurant.netlify.app/sitemap.xml ',
+        policy: [{userAgent: '*', allow: '/'}]
+      }
+    },
+    "gatsby-plugin-sitemap",
+    
     "gatsby-plugin-styled-components", 
     "gatsby-plugin-image",
      "gatsby-plugin-react-helmet", 

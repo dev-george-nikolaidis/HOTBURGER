@@ -3,6 +3,7 @@ import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
 import line from "../../../../assets/images/line.png"
+import SEO from '../../../layout/Seo';
 import ProductPageLayout, { QueryProps } from '../ProductPageLayout';
 
 
@@ -42,6 +43,7 @@ const  BeefBurgersMenu :React.FC = () => {
 
   return (
 <Wrapper> 
+  <SEO title="Signature Burgers" description={description}/>
     <ProductPageLayout queryData={queryData} sectionTitle={"Signature Burgers"} sectionDescription={description}/>
 </Wrapper>
 );

@@ -10,7 +10,7 @@ import ProductPageModal from '../ProductPageModal';
 const  Modal :React.FC = () => {
     const {state:{menuCategory ,cart},dispatch} = useHotburgerContext()
 
-    console.log(cart)
+    // console.log(cart)
 
 
     const resetClickedItem = () => {
@@ -32,7 +32,7 @@ const  Modal :React.FC = () => {
     }})
     }
 
-    console.log(menuCategory)
+    // console.log(menuCategory)
   return (
 <Wrapper>
 

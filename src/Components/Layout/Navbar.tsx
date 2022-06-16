@@ -5,8 +5,7 @@ import "../../assets/css/main.css"
 import Logo from "../../assets/images/logo.svg"
 import { FaShoppingCart ,} from "react-icons/fa";
 import { useHotburgerContext } from '../../context/hotburger/HotburgerContext';
-import { GiHamburgerMenu } from "react-icons/gi";
-import Menu from './Menu';
+import HamburgerMenu from './HamburgerMenu';
 
 
 const  Navbar :React.FC = () => {
@@ -43,16 +42,11 @@ const  Navbar :React.FC = () => {
             <li>
               <Link to="/menu" activeStyle={active}>Menu</Link>
             </li>
-
-         
-
             <li className="list-cart">
               <Link to="/app/cart"  className="cart-container-link">  <FaShoppingCart className="cart-icon" />  <span className="cart-text">{cart.amount}</span> </Link>
-            </li>
-             
+            </li>    
             <li className='list-burger'>
-              {/* <GiHamburgerMenu className="burger-menu-icon"/> */}
-              <Menu/>
+              <HamburgerMenu/>
             </li>
            
            
@@ -182,10 +176,7 @@ const Wrapper = styled.nav`
       display:inline-block;
      }
 
-   ul  .list-cart{
-      display: inline-block;
-      margin: 0 0 0 auto;
-     }
+ 
   }
 
     /* 480px -  320px  */
@@ -198,9 +189,9 @@ const Wrapper = styled.nav`
         font-size: 2.5rem;
       }
 
-      .cart-icon{
-    font-size:2.5rem;
-      }
+        .cart-icon{
+      font-size:2.5rem;
+        }
 
   }
 
