@@ -201,29 +201,29 @@ const Wrapper = styled.div`
      
 
      .one{
-      left:-40%;
+      left:-30%;
       background: #0C84D9;
   }
 
   .two{
-      left:13%;
+      left:23%;
       background: #0C84D9;
   }
 
   .three{
-      left:66%;
+      left:76%;
       background: #bbb;
    
   }
   .four{
-      left:130%;
+      left:120%;
       background: #bbb;
        
   }
 
     .first {
       background: #0C84D9;
-      width:45%;
+      width:55%;
       left:-28%;
     }
     .second {
@@ -232,7 +232,7 @@ const Wrapper = styled.div`
     }
     .third {
       left: 68%;
-      width:70%;
+      width:60%;
     }
 
         .message{
@@ -240,18 +240,18 @@ const Wrapper = styled.div`
   font-size:1.3rem;
   }
     .message-1{
-  left: -55%;
+  left: -40%;
 }
 .message-2{
-  left: -5%;
+  left: 10%;
 }
 .message-3{
-  left: 50%;
+  left: 60%;
 }
 
 
 .message-4{
-  right: -60%;
+  right: -45%;
 }
   }
 

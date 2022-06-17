@@ -79,26 +79,7 @@ html {
   --margin-section-top:20rem;
   --margin-section-bottom:20rem;
   
-  /*************************    Media Query's  Breakpoints ********************/
-   /* Media Query's */
-   --bp-1850: 115.62em;
-   --bp-1400: 87.5em;
-   /* 1400px / 16px */
-    --bp-1200:75em;
 
-
-   --bp-big: 68.75em;
-   /* 1100px / 16px */
-   --bp-large: 50em;
-   /* 800px / 16px */
-   --bp-medium: 37.5em;
-   /* 600px / 16px */
-   --bp-small: 31.25em;
-   /* 500px /16px */
-   --bp-smallest: 25em;
-   /* 400px /16px */
-   --bp-landscape: 31.25em;
-   /* 500px height */
 }
 /*
 =============== 
