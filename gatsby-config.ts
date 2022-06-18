@@ -27,8 +27,9 @@ const config: GatsbyConfig = {
         policy: [{userAgent: '*', allow: '/'}]
       }
     },
+ 
+    `gatsby-plugin-sass`,
     "gatsby-plugin-sitemap",
-    
     "gatsby-plugin-styled-components", 
     "gatsby-plugin-image",
      "gatsby-plugin-react-helmet", 
@@ -38,6 +39,7 @@ const config: GatsbyConfig = {
       "icon": "src/images/icon.png"
     }
   },
+
    "gatsby-plugin-sharp",
    "gatsby-transformer-sharp", { 
     resolve: 'gatsby-source-filesystem',

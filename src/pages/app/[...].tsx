@@ -13,6 +13,7 @@ import CheckOrderStatus from '../../components/CheckOrderStatus/CheckOrderStatus
 
 
 
+
 // Here can use my dynamic routes
 const App: React.FC = () => {
 
@@ -23,6 +24,7 @@ const App: React.FC = () => {
         <Cart path="/cart" />
         {/* <Login path="/login" /> */}
         {/* <SignUp path="/sign-up" /> */}
+     
         <CheckOrderStatus path="/check-order" />
         <CheckoutSuccess path="/checkout-success/:session_id" />
         <NotFoundPage path="*" />

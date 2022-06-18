@@ -1,7 +1,7 @@
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
-
+import  * as styles from "./about.module.scss";
 
 
 
@@ -17,6 +17,9 @@ const  About :React.FC = () => {
         <p><span>HOT</span><span>BURGER</span> offers burger lovers a better, more flavorful burger alternative usually only found in gourmet restaurants but at a fraction of the price. Go with traditional beef or choose from our vegan and vegetarian friendly burger menu. Our goal is to bring gourmet "fast-food" dining to you . We have a wide range of menu items, many of which are prepared in a way that tastes the way they should taste, all created from scratch with only the freshest ingredients.</p>
       </div>
       <StaticImage src="../assets/images/about.png" alt="" className='about-image'/>
+      {/* <div className={styles.test}>kdsakodpas</div>
+      <div className={styles.test2}>kdsakodpas</div>
+      <div className={styles.test3}>kdsakodpas</div> */}
 </Wrapper>
 
 );

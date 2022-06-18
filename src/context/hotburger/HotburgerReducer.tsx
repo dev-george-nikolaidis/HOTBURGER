@@ -8,8 +8,7 @@ type ReducerType = (state : HotburgerContextState ,action:Action) => HotburgerCo
 
 export const reducer : ReducerType = (state,action) => {
 switch (action.type) {
-  case  ActionTypes.TEST:
-      return ({...state});
+
   case  ActionTypes.SET_CURRENT_ITEM_CLICKED:
     return (
       {

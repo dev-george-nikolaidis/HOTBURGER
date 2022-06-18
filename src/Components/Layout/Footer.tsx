@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { MdOutlineLocationOn,MdAccessTime,MdLocalPhone} from "react-icons/md";
+import {test,test2} from "./footer.module.scss"
+
+
 const  Footer :React.FC = () => {
 
   return (
@@ -12,7 +15,7 @@ const  Footer :React.FC = () => {
                 <MdOutlineLocationOn className="icon"/>
                 <h5 className="title">Address</h5>
               </div>
-              <p>97845 Baker st. 567   Los Angeles - US</p>
+              <p >97845 Baker st. 567   Los Angeles - US</p>
           </div>
 
           <div className="open-hours">
@@ -20,7 +23,7 @@ const  Footer :React.FC = () => {
                 <MdAccessTime className="icon"/>
                 <h5 className="title">Opening Hours</h5>
               </div>
-              <p>Monday-Sunday:11:00 am - 10:00 pm</p>
+              <p >Monday-Sunday:11:00 am - 10:00 pm</p>
           </div>
 
           <div className="newsletter">
@@ -28,7 +31,7 @@ const  Footer :React.FC = () => {
                 <MdLocalPhone className="icon"/>
                 <h5 className="title">Call Us </h5>
               </div>
-              <p>(213) 320-4244</p>
+              <p >(213) 320-4244</p>
           </div>
       </div>
       <hr  />

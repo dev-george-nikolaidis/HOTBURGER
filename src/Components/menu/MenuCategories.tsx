@@ -4,9 +4,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { ActionTypes } from '../../context/Constants';
 import { useHotburgerContext } from '../../context/hotburger/HotburgerContext';
+import MenuCategoriesList from './MenuCategoriesList';
 
 
-type QueryProps = {
+export type QueryPropsCategory = {
  
     allStrapiCategory: {
       nodes: Array<{
@@ -63,7 +64,8 @@ const query = graphql`
 `
 
 const  MenuCategories :React.FC = () => {
-  const queryData:QueryProps = useStaticQuery(query)
+
+  const queryData:QueryPropsCategory = useStaticQuery(query)
   const {dispatch,state:{currentMenuCategory}} = useHotburgerContext();
 
     const onClickHandler = (e:React.MouseEvent<HTMLDivElement>) => {
@@ -87,7 +89,12 @@ const  MenuCategories :React.FC = () => {
     
   return (
 <Wrapper>
-     {displayCategories}
+      <span className="displayCategories-grid">
+       {displayCategories}
+      </span>
+      <span className="displayCategories-list">
+          <MenuCategoriesList queryData={queryData}/>
+      </span>
 </Wrapper>
 );
 };
@@ -124,56 +131,24 @@ const Wrapper = styled.div`
     align-items: center; 
   }
 
+  .displayCategories-list{
+    display:none;
+  }
 
 
       /* 1024px - 769px  */
       @media only screen and (max-width:64em) {
+        .displayCategories-grid{
+          display: none;
+        }
+        .displayCategories-list{
+          display:block;
+        }
+                    
 
-               
-          display: grid;
-          grid-template-columns: repeat(2,1fr); 
         
     }
 
-      /*768px - 481px */
-      @media only screen and (max-width:48em) {
 
-          .category-container{
-            margin: 1rem;
-          }
-          display: grid;
-          grid-template-columns: repeat(2,1fr); 
-          .image{
-            width:10rem;
-            height: 10rem;
-      
-          }
-    }
-
-   /* 480px -  320px  */
-   @media only screen and (max-width:30em) {
-      display: grid;
-      grid-template-columns: 1fr; 
-    .category-container{
-      margin: 1rem;
-      padding:0.5rem;
-    }
-
-    .image{
-      width:10rem;
-      height: 10rem;
-  
-      }
-   }
-
-     /* 480px -  320px  */
-  @media only screen and (max-width:30em) {
-    .category-container{
-      margin: 0.5rem;
-      padding:0.5rem;
-   
-      
-    }
-}
 
 `
