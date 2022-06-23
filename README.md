@@ -27,7 +27,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/Dev-Geo-Nik/Personal-website/blob/main/src/assets/images/projects/hotburger/menu.png)
+<img src="https://github.com/Dev-Geo-Nik/Personal-website/blob/main/src/assets/images/projects/hotburger/menu.png" alt="project image">
 
 This is an E-Commerce Restaurant app created for the imaginary company HOTBURGER. The app was created with the following main considerations in mind.
 
