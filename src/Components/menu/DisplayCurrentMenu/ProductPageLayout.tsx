@@ -119,7 +119,7 @@ const  ProductPageLayout :React.FC<Props> = ({queryData, sectionTitle,sectionDes
           <div className="product-container" key={id}>
               <div className="product-image-container">
                   {/* @ts-ignore */}
-                  <GatsbyImage image = {menu_image.localFile.childImageSharp.gatsbyImageData} alt={title} className="product-image" />
+                  <GatsbyImage image = {menu_image.localFile.childImageSharp.gatsbyImageData} alt={title} className="product-image"  objectFit='fill'/>
               </div>
               <div className="details-container">
   

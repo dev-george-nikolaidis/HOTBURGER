@@ -79,7 +79,7 @@ const  CheckoutSuccess :React.FC<Props> = ({}) => {
         <div className="modal-container">
         
             <FaCheckCircle className="icon"/>
-             <h1>Success!</h1>
+             <h2>Success!</h2>
            <p className="sub-text">{user.name} your request has been successfully processed</p>
            <CopyToClipboard text={user.orderId} onCopy = {()=>setClipboardCopied(true)} >
 
@@ -107,7 +107,7 @@ export default CheckoutSuccess;
 
 
 const Wrapper = styled.section`
-  /* background-color: var(--clr-success); */
+  background-color: var(--clr-background-menu);
   height:100vh;
   position: relative;
 
@@ -116,7 +116,7 @@ const Wrapper = styled.section`
     top: 40%;
     left: 50%;
     text-align:center;
-   transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     /* border: 1px solid #000; */
   
     /* background:red; */

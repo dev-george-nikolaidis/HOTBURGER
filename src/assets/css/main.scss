@@ -16,71 +16,68 @@ html {
 }
 
 
-:root {
+
 
   /*************************   Color Palette    ********************/
  
-  --clr-primary-1: #E7A74F; 
-  --clr-primary-2: #2A1B0D; 
+  $clr-primary-1: #E7A74F; 
+  $clr-primary-2: #2A1B0D; 
   
-  --clr-primary-1-hover:#dd8408;
+  $clr-primary-1-hover:#dd8408;
   
 
-  --clr-modal-1 :rgba(0,0,0,0.35);
+  $clr-modal-1 :rgba(0,0,0,0.35);
 
 
 
-  --clr-error-1:#d32f2f;
-  --clr-success:#2e7d32;
+  $clr-error-1:#d32f2f;
+  $clr-success:#2e7d32;
 
 
   /*  color  used for headings */
-  --clr-title-1: #ffff;
-  --clr-title-2: #2A1B0D;
+  $clr-title-1: #ffff;
+  $clr-title-2: #2A1B0D;
 
 
 
   /* text colors */
-  --clr-text-1:#2A1B0D;
-  --clr-text-2: hsl(210, 31%, 80%);
+  $clr-text-1:#2A1B0D;
+  $clr-text-2: hsl(210, 31%, 80%);
 
   /* background color */
-  --clr-background-1:#2A1B0D;
-  --clr-background-menu:#F7F3E3;
+  $clr-background-1:#2A1B0D;
+  $clr-background-menu:#F7F3E3;
 
-  --clr-white: #fff;
-  --clr-black: #000;
+
 
 
   /*************************   Fonts     ********************/
-  --ff-primary-1 : "Raleway", sans-serif;
-  --ff-primary-2 : "lato", sans-serif;
-  --ff-primary-3 : "Comfortaa", sans-serif;
+  $ff-primary-1 : "lato", sans-serif;
+  $ff-primary-2 : "Raleway", sans-serif;
+  $ff-primary-3 : "Comfortaa", sans-serif;
  
   
-  --ff-paragraph-1:"lato", sans-serif;
+  $ff-paragraph-1:"lato", sans-serif;
   
   
   
   /*************************   Shadows     ********************/
-  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  $light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  $dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   
   
-  --transition: all 0.3s linear;
-  --spacing: 0.2rem;
-  --radius: 0.25rem;
+  $transition: all 0.3s linear;
+  $spacing: 0.2rem;
+  $radius: 0.25rem;
 
-  --max-width: 1440px;
-  --fixed-width: 700px;
+  $max-width: 1440px;
+  $fixed-width: 700px;
   
   /* Margins */
-  --margin-section-top-bottom:20rem 0;
-  --margin-section-top:20rem;
-  --margin-section-bottom:20rem;
+
   
 
-}
+
 /*
 =============== 
 Global Styles
@@ -127,8 +124,7 @@ h4 {
   font-size: 0.875rem;
 }
 p {
-  /* margin-bottom: 1.25rem; */
-  color: var(--clr-grey-3);
+ 
 }
 /* 
 img{
@@ -139,41 +135,44 @@ img{
 
 .btn-cta {
   text-transform: uppercase;
-  background: var(--clr-primary-1);
-  color: var(--clr-text-1);
+  background: $clr-primary-1;
+  color: $clr-text-1;
   padding: 0.8rem 2rem;
-  transition: var(--transition); 
+  transition:$transition;
   display: inline-block;
   cursor: pointer;
   border: none;
   border-radius: 1rem; 
   font-size: 1.8rem;
-  font-family: var(--ff-primary-3 ) ;
+  font-family: $ff-primary-1;
   font-weight: bold;
+
+
+
 }
 .btn-cta:hover {
 
-  background: var(--clr-primary-1-hover);
+  background: $clr-primary-1-hover;
 }
 
 .btn-ghost{
   text-transform: uppercase;
   background-color: transparent;
-  color: var(--clr-text-1);
+  color:$clr-text-1;
   padding: 0.8rem 2rem;
-  transition: var(--transition); 
+  transition: $transition;
   display: inline-block;
   cursor: pointer;
   border: 2px solid #000;
   border-radius: 1rem; 
   font-size: 1.8rem;
-  font-family: var(--ff-primary-3 ) ;
+  font-family: $ff-primary-3;
   font-weight: bold;
 }
 
 .btn-ghost:hover {
 
-  background: var(--clr-primary-1-hover);
+  background: $clr-primary-1-hover;
 }
 
 
@@ -198,14 +197,6 @@ img{
 
 
 /*  utility classes */
-.section-title{
-  text-align: center;
-  margin: 10rem 0;
-  font-size: 2.8rem;
-  letter-spacing: 0.4rem;
-  font-family: var( --ff-primary-1);
-  font-weight: 600;
-}
 
 .modal{
   position: absolute;
@@ -214,7 +205,7 @@ img{
   right: 0;
   bottom: 0;
   z-index: 2;
-  background: var(--clr-modal-1);
+  // background: $clr-modal-
 }
 
 .absolute{

@@ -86,9 +86,9 @@ const Wrapper = styled.div`
    } 
 
     .product-img{
-        width: 20rem;
-        height: 10rem;
-
+        width: 15rem;
+        height: auto;
+        object-fit:fill;
         /* border: 2px solid rgba(0,0,0,0.5); */
         border-radius:10px;
       

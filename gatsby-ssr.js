@@ -1,6 +1,6 @@
 
 
-const React = require("react");
+const React = require("react")
 const {HotburgerContextProvider} = require("./src/context/hotburger/HotburgerContext");
 
 exports.wrapRootElement   = ({element}) =>{

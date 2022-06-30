@@ -53,7 +53,7 @@ const  MeatBurgerModal :React.FC<MeatBurgerProps> = ({resetClickedItem}) => {
     <div className="modal-popup"> </div>
       <div className="model-container">
           <AiFillCloseCircle className="icon-close" onClick={resetClickedItem}/>
-          <img src={imageUrl} alt={title} />
+          <img className="product-img" src={imageUrl} alt={title} />
            <div className="title-container">
               <h2>{title}</h2>
               <p className="price">${price}</p>
@@ -124,9 +124,10 @@ const Wrapper = styled.div`
     font-size: 2.5rem;
   }
 
-  img{
+  .product-img{
     width: 100%;
     height: 32rem;
+    object-fit: contain;
   }
 
   h2{
@@ -201,7 +202,7 @@ const Wrapper = styled.div`
         margin: 2rem 0;
       }
 
-        img{
+      .product-img{
       height: 24rem;
        }
     
@@ -223,7 +224,7 @@ const Wrapper = styled.div`
         margin: 2rem 0;
       }
 
-        img{
+        .product-img{
       height: 14rem;
        }
        h3{

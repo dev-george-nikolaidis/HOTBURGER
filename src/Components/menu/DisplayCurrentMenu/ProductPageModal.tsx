@@ -32,7 +32,7 @@ const  ProductPageModal :React.FC<Props>  = ({resetClickedItem}) => {
           <AiFillCloseCircle className="icon-close" onClick={resetClickedItem}/>
           <div className="image-container">
 
-          <img src={imageUrl} alt={title} />
+          <img  className="product-img"src={imageUrl} alt={title} />
           </div>
            <div className="title-container">
               <h2>{title}</h2>
@@ -100,9 +100,10 @@ const Wrapper = styled.div`
   .image-container{
     /* height: ; */
   }
-  img{
+  .product-img{
     width: 100%;
     height: 32rem;
+    object-fit: contain;
   }
 
   h2{

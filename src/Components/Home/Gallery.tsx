@@ -65,7 +65,7 @@ const  Gallery :React.FC = () => {
         <div key={index}  className="wrapper">
           <div className="img-container">
           {/* @ts-ignore */}
-            <GatsbyImage  image={image.gallery_image.localFile.childImageSharp.gatsbyImageData} alt="x" className='gallery-image'/>
+            <GatsbyImage  image={image.gallery_image.localFile.childImageSharp.gatsbyImageData} alt="x" className='gallery-image' objectFit='fill'/>
           </div>
         </div>
       )

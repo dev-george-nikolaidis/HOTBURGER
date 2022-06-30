@@ -79,7 +79,7 @@ const  MenuCategories :React.FC = () => {
         return(
           <div className={currentMenuCategory.toLocaleUpperCase() === category.toLocaleUpperCase() ? "category-container active":"category-container"} key={id} onClick={onClickHandler} data-category={[category]}>
                 {/* @ts-ignore */}
-                <GatsbyImage image = {category_image.localFile.childImageSharp.gatsbyImageData} alt={title} className="image" />
+                <GatsbyImage image = {category_image.localFile.childImageSharp.gatsbyImageData} alt={title} className="image"  objectFit='fill'/>
                <h2>{title}</h2>
           </div>
         )
