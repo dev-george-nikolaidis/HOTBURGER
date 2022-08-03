@@ -28,6 +28,7 @@ const  CheckoutSuccess :React.FC<Props> = ({}) => {
 
   if (windowSession != sessionID) {
     navigate("/")
+    return <></>
   }
 
   

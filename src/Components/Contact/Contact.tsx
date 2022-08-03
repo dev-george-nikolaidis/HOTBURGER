@@ -15,8 +15,8 @@ type UserSubmitForm  = {
 
 }
 
-const value1 =getRandomNumberBetween(1,5)
-const value2 =getRandomNumberBetween(1,5)
+const value1 = getRandomNumberBetween(1,5)
+const value2 = getRandomNumberBetween(1,5)
 const total = value1 + value2
 
 
