@@ -8,9 +8,10 @@
   </a>
 
   <h3 align="center">HOTBURGER</h3>
-
+  For live preview click [link](https://hotburger-restaurant.netlify.app)
+</div>
  
-For live preview click [link](https://hotburger-restaurant.netlify.app)
+
 
 
 <img src="https://github.com/Dev-Geo-Nik/Personal-website/blob/main/src/assets/images/projects/hotburger/menu.png" alt="project image">+
