@@ -2,7 +2,7 @@
 
 <!-- PROJECT LOGO -->
 <br />
-<div align="center">
+<div >
   <a href="https://hotburger-restaurant.netlify.app/">
     <img src="https://github.com/Dev-Geo-Nik/HOTBURGER/blob/main/src/assets/images/Logo.png" alt="Logo" width="80" height="80">
   </a>
@@ -22,7 +22,7 @@ This is an E-Commerce Restaurant app created for the imaginary company HOTBURGER
 -   User-friendly interface, so customers can easily purchase products.
 -   To be SEO (Search Engine Optimization) optimized through best practices in order to drive more traffic.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+
 
 ### Built With
 
