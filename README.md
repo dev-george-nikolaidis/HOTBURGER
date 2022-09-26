@@ -2,7 +2,7 @@
 
 <!-- PROJECT LOGO -->
 <br />
-<div >
+<div align="center" >
   <a href="https://hotburger-restaurant.netlify.app/">
     <img src="https://github.com/Dev-Geo-Nik/HOTBURGER/blob/main/src/assets/images/Logo.png" alt="Logo" width="80" height="80">
   </a>
@@ -10,7 +10,7 @@
   <h3 align="center">HOTBURGER</h3>
 
  
-
+For live preview click [link](https://hotburger-restaurant.netlify.app)
 
 
 <img src="https://github.com/Dev-Geo-Nik/Personal-website/blob/main/src/assets/images/projects/hotburger/menu.png" alt="project image">+
